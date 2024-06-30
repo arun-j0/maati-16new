@@ -7,3 +7,34 @@
 body {
     font-family: 'Poppins', sans-serif;
   }
+
+  @keyframes underline-travel {
+    0%, 100% {
+      width: 0;
+      left: 0;
+    }
+    50% {
+      width: 100%;
+      left: 0;
+    }
+  }
+  
+  .underline-travel {
+    position: relative;
+    display: inline-block;
+   /* Adjust thickness and color as needed */
+    width: fit-content; /* Adjust width based on content or container */
+  }
+  
+  .underline-travel::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px; /* Adjust thickness to match border-bottom */
+    background-color: black; /* Adjust color as needed */
+    animation: underline-travel 2s linear infinite; /* Adjust animation duration as needed */
+  }
+  
+  

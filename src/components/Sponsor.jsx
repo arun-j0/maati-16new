@@ -69,7 +69,9 @@ const SponsorSection = () => {
         animate={controls}
         variants={titleVariants}
       >
-        SPONSOR
+        <span className='underline-travel'>SPONSOR
+        <div class="box-line"></div>
+        </span>
       </motion.h2>
       <motion.p
         className="mb-8 text-xl text-center md:text-2xl text-[#280101]"

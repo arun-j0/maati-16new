@@ -32,7 +32,7 @@ const ConnectWithUs = () => {
         animate={controls}
         variants={sectionVariants}
       >
-        CONNECT WITH US
+        <span className='underline-travel'>CONNECT WITH US</span>
       </motion.h2>
       <motion.p
         className="mb-8 text-xl text-center md:text-2xl text-[#280101]"
@@ -40,7 +40,7 @@ const ConnectWithUs = () => {
         animate={controls}
         variants={sectionVariants}
       >
-        Call/Whatsapp/Text at +91 - 9870112134 to know more!
+        Call/Whatsapp/Text at <span className='text-amber-500'>+91 - 9870112134</span>  to know more!
       </motion.p>
       <div className="grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
         <motion.div
