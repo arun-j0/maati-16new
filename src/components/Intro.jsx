@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-
+import intro from '../assets/intro.jpg'
 const IntroSection = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -48,10 +48,10 @@ const IntroSection = () => {
         initial="hidden"
         animate={controls}
         variants={imageVariants}
-        className="p-4 md:w-1/2"
+        className="p-4 md:w-1/2 "
       >
         <img
-          src="https://designshack.net/wp-content/uploads/placeholder-image.png"
+          src={intro}
           alt="Placeholder"
           className="w-full h-auto rounded-lg shadow-lg"
         />
