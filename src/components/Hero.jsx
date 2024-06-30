@@ -10,7 +10,7 @@ import hero3 from '../assets/hero1.jpg';
 
 const HeroSection = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
