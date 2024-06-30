@@ -102,7 +102,7 @@ const Footer = () => {
           </p>
           <p className="flex items-center mb-2">
             <FaEnvelope className="mr-2" />
-            <a href="mailto:abcde@gmail.com" className="hover:text-amber-800">abcde@gmail.com</a>
+            <a href="mailto:maati16official@gmail.com" className="hover:text-amber-800">maati16official@gmail.com</a>
           </p>
         </div>
       </motion.div>
