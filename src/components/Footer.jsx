@@ -67,13 +67,16 @@ const Footer = () => {
               <Link to="/core-members" className="hover:text-amber-800">Core Members</Link>
             </li>
             <li>
-              <Link to="/volunteers" className="hover:text-amber-800">Volunteers</Link>
+              <Link to="/core-members" className="hover:text-amber-800">Our Motto and Objective</Link>
             </li>
             <li>
-              <Link to="/donation-events" className="hover:text-amber-800">Donation Events</Link>
+              <Link to="/core-members" className="hover:text-amber-800">FAQs and Policies</Link>
             </li>
             <li>
-              <Link to="/students-benefited" className="hover:text-amber-800">Students Benefited</Link>
+              <Link to="/donation-events" className="hover:text-amber-800">Our Works</Link>
+            </li>
+            <li>
+              <Link to="/students-benefited" className="hover:text-amber-800">Blogs</Link>
             </li>
           </ul>
         </div>
