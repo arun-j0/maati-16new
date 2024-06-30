@@ -218,14 +218,14 @@ const Navbar = () => {
           {!isMenuOpen ? (
             <button
               onClick={toggleMenu}
-              className="block text-gray-800 hover:text-white focus:outline-none"
+              className="block text-gray-800 hover:text-amber-800 focus:outline-none"
             >
               <FaBars className="w-6 h-6" />
             </button>
           ) : (
             <button
               onClick={closeMenu}
-              className="block text-gray-800 hover:text-white focus:outline-none"
+              className="block text-gray-800 hover:text-amber-800 focus:outline-none"
             >
               <FaTimes className="w-6 h-6" />
             </button>

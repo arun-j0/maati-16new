@@ -37,10 +37,10 @@ const IntroSection = () => {
       >
         <h2 className="mb-2 text-2xl text-[#280101] font-bold md:text-3xl">Welcome to</h2>
         <h2 className="mb-4 text-4xl text-[#280101] font-bold md:text-5xl">MAATI-16<sup>™</sup></h2>
-        <p className="mb-4 text-lg md:text-xl">
+        <p className="mb-4 text-lg text-justify md:text-xl">
           Maati 16 is a youth-run community-based in Patna, dedicated to helping the poor and needy, especially children who wish to study and create a brighter future. Currently, we are operating in New Delhi and we aim to expand our reach throughout India. The Trust was established to provide relief, assistance, and support to the general public, particularly those who are economically and educationally disadvantaged. Our focus areas are education, healthcare, technical professional training, and other economic activities.
         </p>
-        <p className="mb-4 text-lg md:text-xl">
+        <p className="mb-4 text-lg text-justify md:text-xl">
           Earlier we were 'YOUTH POWER' which was eventually meant to portray the positive potential energy of the youth to change society and now, here we are with the name 'MAATI 16' which means we are grounded and eager to do well for the sake of humanity and humans. Maati symbolizes “Soil” and “16” represents our establishment year.
         </p>
       </motion.div>
