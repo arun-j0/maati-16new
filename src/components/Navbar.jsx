@@ -3,11 +3,13 @@ import { Link, useLocation } from 'react-router-dom';
 import { FaHome, FaInfoCircle, FaBriefcase, FaImages, FaProjectDiagram, FaBlog, FaPhone, FaDonate, FaBars, FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import logo from '../assets/logo.png';
+import PersonalDetails from './PersonalDetails';
 
 const Navbar = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [showPersonalDetails, setShowPersonalDetails] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -41,6 +43,11 @@ const Navbar = () => {
     hidden: { opacity: 0, y: -10 },
     visible: { opacity: 1, y: 0 },
   };
+
+  const togglePersonalDetails = () => {
+    setShowPersonalDetails(!showPersonalDetails);
+    setIsOpen(false); // Close mobile menu on personal details toggle
+};
 
   return (
     <header className="z-10 bg-gray-100 shadow">
@@ -81,13 +88,13 @@ const Navbar = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <li>
-                  <Link
-                    to="/personal-details"
-                    className="block px-4 py-2 text-gray-800 transition-colors duration-300 rounded-lg hover:text-white hover:bg-amber-800"
-                    onClick={closeMenu}
+                  <button
+                    
+                    className="block w-full px-4 py-2 text-gray-800 transition-colors duration-300 rounded-lg hover:text-white hover:bg-amber-800"
+                    onClick={togglePersonalDetails}
                   >
                     Personal Details
-                  </Link>
+                  </button>
                 </li>
                 <li>
                   <Link
@@ -393,7 +400,9 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
+      {showPersonalDetails && <PersonalDetails onClose={togglePersonalDetails} />}
     </header>
+    
   );
 };
 
