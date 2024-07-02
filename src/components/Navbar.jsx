@@ -44,10 +44,7 @@ const Navbar = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-  const togglePersonalDetails = () => {
-    setShowPersonalDetails(!showPersonalDetails);
-    setIsOpen(false); // Close mobile menu on personal details toggle
-};
+
 
   return (
     <header className="z-10 bg-gray-100 shadow">
@@ -55,7 +52,7 @@ const Navbar = () => {
         <div className="flex items-center">
           <Link to="/" className="flex items-center">
             <img src={logo} alt="Logo" className="w-auto h-16" />
-            <span className="ml-2 text-xl italic font-extrabold text-[#280101] md:text-3xl hover:text-lime-500">MAATI-16</span>
+            <span className="ml-2 text-xl italic font-extrabold text-[#280101] md:text-3xl">MAATI-16</span>
           </Link>
         </div>
 
@@ -88,13 +85,13 @@ const Navbar = () => {
                 onMouseLeave={handleMouseLeave}
               >
                 <li>
-                  <button
-                    
+                  <Link
+                    to="/personaldetails"
                     className="block w-full px-4 py-2 text-gray-800 transition-colors duration-300 rounded-lg hover:text-white hover:bg-amber-800"
-                    onClick={togglePersonalDetails}
+                    
                   >
                     Personal Details
-                  </button>
+                  </Link>
                 </li>
                 <li>
                   <Link
@@ -116,7 +113,7 @@ const Navbar = () => {
                 </li>
                 <li>
                   <Link
-                    to="/faqs-policies"
+                    to="/faqs"
                     className="block px-4 py-2 text-gray-800 transition-colors duration-300 rounded-lg hover:text-white hover:bg-amber-800"
                     onClick={closeMenu}
                   >
@@ -400,7 +397,7 @@ const Navbar = () => {
           </li>
         </ul>
       </nav>
-      {showPersonalDetails && <PersonalDetails onClose={togglePersonalDetails} />}
+
     </header>
     
   );

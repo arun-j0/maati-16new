@@ -3,6 +3,8 @@ import HomePage from './pages/HomePage';
 import GalleryPage from './pages/GalleryPage';
 import BlogPage from './pages/BlogPage';
 import WorkPage from './pages/WorkPage';
+import PersonalDetailsPage from './pages/PersonalDetailsPage';
+import FaqsPage from './pages/FaqsPage';
 
 function App() {
     return (
@@ -13,6 +15,8 @@ function App() {
                     <Route path="/gallery" element={<GalleryPage />} />
                     <Route path="/blogs" element={<BlogPage />} />
                     <Route path="/our-works" element={<WorkPage />} />
+                    <Route path="/personaldetails" element={<PersonalDetailsPage/>} />
+                    <Route path="/faqs" element={<FaqsPage/>} />
               </Routes>
             </>
         </Router>

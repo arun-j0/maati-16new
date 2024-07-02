@@ -138,7 +138,7 @@ const BlogPage = () => {
       <Navbar/>
       <section className="py-12  bg-gray-100 border-b-4 border-[#fee57e] border-8">
         <div className="container mx-auto">
-          <h2 className="mb-8 text-4xl font-bold text-center md:text-6xl text-amber-800">Blogs</h2>
+          <h2 className="mb-8 text-4xl font-bold text-center md:text-6xl text-[#280101] ">Blogs</h2>
 
           <div className="relative mb-8">
             <input
