@@ -5,6 +5,7 @@ import BlogPage from './pages/BlogPage';
 import WorkPage from './pages/WorkPage';
 import PersonalDetailsPage from './pages/PersonalDetailsPage';
 import FaqsPage from './pages/FaqsPage';
+import MembershipForm from './components/MembershipForm';
 
 function App() {
     return (
@@ -15,8 +16,9 @@ function App() {
                     <Route path="/gallery" element={<GalleryPage />} />
                     <Route path="/blogs" element={<BlogPage />} />
                     <Route path="/our-works" element={<WorkPage />} />
-                    <Route path="/personaldetails" element={<PersonalDetailsPage/>} />
-                    <Route path="/faqs" element={<FaqsPage/>} />
+                    <Route path="/personaldetails" element={<PersonalDetailsPage />} />
+                    <Route path="/faqs" element={<FaqsPage />} />
+                    <Route path="/membership" element={<MembershipForm />} />
               </Routes>
             </>
         </Router>
