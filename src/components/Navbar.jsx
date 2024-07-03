@@ -84,7 +84,7 @@ const Navbar = () => {
                   <Link
                     to="/personaldetails"
                     className="block w-full px-4 py-2 text-gray-800 transition-colors duration-300 rounded-lg hover:text-white hover:bg-amber-800"
-                    
+                    onClick={closeMenu}
                   >
                     Personal Details
                   </Link>
