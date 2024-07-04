@@ -6,7 +6,7 @@ const PersonalDetails = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-4 text-black bg-gray-100 border-[#fee57e] border-8">
       <motion.h2
-        className="mb-4 text-4xl font-bold text-[#280101] underline-travel md:text-6xl"
+        className="mb-8 text-4xl font-bold text-[#280101] underline-travel md:text-6xl"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
@@ -21,7 +21,7 @@ const PersonalDetails = () => {
         transition={{ duration: 0.5 }}
       >
         <motion.div
-          className="relative mb-4 md:mb-0 md:mr-8"
+          className="relative mb-8 md:mb-0 md:mr-12"
           whileHover={{ scale: 1.05 }}
         >
           <img
