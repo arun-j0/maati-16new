@@ -152,7 +152,7 @@ const DonationForm = () => {
           />
         </FormGroup>
         <FormGroup>
-          <Label htmlFor="amount">Amount Donated</Label>
+          <Label htmlFor="amount">Amount to Donate</Label>
           <Input
             type="number"
             id="amount"
@@ -162,7 +162,7 @@ const DonationForm = () => {
             required
           />
         </FormGroup>
-        <SubmitButton type="submit" className='bg-amber-500 hover:bg-amber-600'>Submit</SubmitButton>
+        <SubmitButton type="submit" className='bg-amber-500 hover:bg-amber-600'>Donate</SubmitButton>
       </motion.form>
     </Container>
     </div>
