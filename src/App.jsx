@@ -7,8 +7,11 @@ import BlogPage from './pages/BlogPage';
 import WorkPage from './pages/WorkPage';
 import PersonalDetailsPage from './pages/PersonalDetailsPage';
 import FaqsPage from './pages/FaqsPage';
-import MembershipForm from './components/MembershipForm';
-import Donation from './components/Donation';
+import MembershipPage from './pages/MembershipPage';
+import DonationPage from './pages/DonationPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+
+
 
 function App() {
     return (
@@ -20,8 +23,10 @@ function App() {
                 <Route path="/our-works" element={<WorkPage />} />
                 <Route path="/personaldetails" element={<PersonalDetailsPage />} />
                 <Route path="/faqs" element={<FaqsPage />} />
-                <Route path="/membership" element={<MembershipForm />} />
-                <Route path="/donation" element={<Donation />} />
+               
+                <Route path="/membership-volunteership" element={<MembershipPage />} />
+                <Route path="/donate-us" element={<DonationPage />} />
+                <Route path="/privacy-policies" element={<PrivacyPolicyPage />} />
             </Routes>
         </Router>
     );

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 const Container = styled.div`
   background-color: #fff;
@@ -18,19 +19,7 @@ const Header = styled.div`
   align-items: center;
 `;
 
-const CloseButton = styled.button`
-  background-color: #ff5c5c;
-  color: white;
-  border: none;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  text-align: center;
-  line-height: 30px;
-  font-size: 20px;
-  font-weight: bold;
-`;
+
 
 const Title = styled.h2`
   text-align: center;
@@ -60,7 +49,7 @@ const Checkbox = styled.input`
 
 const SubmitButton = styled.button`
   display: inline-block;
-  background-color: #28a745;
+  
   color: white;
   padding: 10px 15px;
   text-align: center;
@@ -70,9 +59,7 @@ const SubmitButton = styled.button`
   width: 100%;
   margin-top: 10px;
   
-  &:hover {
-    background-color: #218838;
-  }
+  
 `;
 
 const Form = () => {
@@ -87,7 +74,7 @@ const Form = () => {
     acceptance: false,
   });
 
-  const [isFormVisible, setIsFormVisible] = useState(true);
+
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -103,19 +90,24 @@ const Form = () => {
     // You can add your form submission logic here
   };
 
-  const handleClose = () => {
-    setIsFormVisible(false);
-  };
 
-  if (!isFormVisible) return null;
 
   return (
+    <div className='border-[#fee57e] border-8'>
+    <motion.h2
+        className="pt-12 pb-5 mb-4 text-4xl font-bold text-center"
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+       <span className='text-4xl font-bold text-[#280101] underline-travel md:text-6xl'>MEMBERSHIP FORM</span>
+      </motion.h2>
     <Container>
-      <Header>
-        <Title>Membership/Volunteership Form</Title>
-        <CloseButton onClick={handleClose}>X</CloseButton>
-      </Header>
-      <form onSubmit={handleSubmit}>
+      
+      <motion.form onSubmit={handleSubmit}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.5, duration: 0.5 }}>
         <FormGroup>
           <Label htmlFor="name">Name</Label>
           <Input
@@ -206,9 +198,10 @@ const Form = () => {
             I hereby, declare that being the member of MAATI-16 will abide by all the rules and regulations and always follow the ethical code of conduct.
           </Label>
         </FormGroup>
-        <SubmitButton type="submit">Submit</SubmitButton>
-      </form>
+        <SubmitButton type="submit" className='bg-amber-500 hover:bg-amber-600'>Submit</SubmitButton>
+      </motion.form>
     </Container>
+    </div>
   );
 };
 

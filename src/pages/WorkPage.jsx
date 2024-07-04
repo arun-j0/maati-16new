@@ -116,7 +116,14 @@ const WorkPage = () => {
       <Navbar />
       <section className="py-12 bg-gray-100 border-b-4 border-[#fee57e] border-8 ">
         <div className="container mx-auto">
-          <h2 className="mb-8 text-4xl font-bold text-center md:text-6xl text-[#280101] ">Our Works</h2>
+        <motion.h2
+        className="pb-5 mb-4 text-4xl font-bold text-center "
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+       <span className='text-4xl font-bold text-[#280101] underline-travel md:text-6xl'> Our Works</span>
+      </motion.h2>
 
           <div className="relative mb-8">
   <input

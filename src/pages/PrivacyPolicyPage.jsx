@@ -1,20 +1,21 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Faqs from '../components/Faqs'
-import Footer from '../components/Footer'
 import { useEffect } from 'react'
+import Navbar from '../components/Navbar'
+import PrivacyPolicy from '../components/PrivacyPolicy'
+import Footer from '../components/Footer'
 
-function FaqsPage() {
+function PrivacyPolicyPage() {
+   
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
   return (
     <>
         <Navbar/>
-        <Faqs/>
+        <PrivacyPolicy/>
         <Footer/>
     </>
   )
 }
 
-export default FaqsPage
+export default PrivacyPolicyPage

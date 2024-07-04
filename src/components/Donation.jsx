@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-
+import { motion} from 'framer-motion';
 const Container = styled.div`
   background-color: #fff;
   padding: 20px;
@@ -44,7 +44,7 @@ const Input = styled.input`
 
 const SubmitButton = styled.button`
   display: inline-block;
-  background-color: #28a745;
+  
   color: white;
   padding: 10px 15px;
   text-align: center;
@@ -54,9 +54,7 @@ const SubmitButton = styled.button`
   width: 100%;
   margin-top: 10px;
   
-  &:hover {
-    background-color: #218838;
-  }
+
 `;
 
 const DonationForm = () => {
@@ -83,16 +81,32 @@ const DonationForm = () => {
   };
 
   return (
+    <div className='border-[#fee57e] border-8'>
+    <motion.h2
+        className="pt-12 pb-5 mb-4 text-4xl font-bold text-center"
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.5 }}
+      >
+       <span className='text-4xl font-bold text-[#280101] underline-travel md:text-6xl'> DONATION FORM</span>
+      </motion.h2>
     <Container>
-      <Header>
-        <Title>Donation Form</Title>
+
+      <Header
+      initial={{ y: -50, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}>
+       
         <BankDetails><strong>Account no:</strong> 49918100000881</BankDetails>
         <BankDetails><strong>Account Holder Name:</strong> Hemanshu</BankDetails>
         <BankDetails><strong>IFSC:</strong> BARB0BUDDHA (5th Character is ZERO)</BankDetails>
         <BankDetails><strong>Branch:</strong> Buddha Colony</BankDetails>
         <BankDetails><strong>Pay Online:</strong> 6205415221@ybl</BankDetails>
       </Header>
-      <form onSubmit={handleSubmit}>
+      <motion.form onSubmit={handleSubmit}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ delay: 0.5, duration: 0.5 }}>
         <FormGroup>
           <Label htmlFor="name">Name</Label>
           <Input
@@ -148,9 +162,10 @@ const DonationForm = () => {
             required
           />
         </FormGroup>
-        <SubmitButton type="submit">Submit</SubmitButton>
-      </form>
+        <SubmitButton type="submit" className='bg-amber-500 hover:bg-amber-600'>Submit</SubmitButton>
+      </motion.form>
     </Container>
+    </div>
   );
 };
 
