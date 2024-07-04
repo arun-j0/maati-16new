@@ -1,195 +1,215 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 
-const MembershipForm = () => {
-  const [form, setForm] = useState({
+const Container = styled.div`
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  margin: 20px auto;
+  position: relative;
+`;
+
+const Header = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
+
+const CloseButton = styled.button`
+  background-color: #ff5c5c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 30px;
+  font-size: 20px;
+  font-weight: bold;
+`;
+
+const Title = styled.h2`
+  text-align: center;
+  margin-bottom: 20px;
+`;
+
+const FormGroup = styled.div`
+  margin-bottom: 15px;
+`;
+
+const Label = styled.label`
+  display: block;
+  margin-bottom: 5px;
+`;
+
+const Input = styled.input`
+  width: calc(100% - 10px);
+  padding: 8px 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: block;
+`;
+
+const Checkbox = styled.input`
+  width: auto;
+`;
+
+const SubmitButton = styled.button`
+  display: inline-block;
+  background-color: #28a745;
+  color: white;
+  padding: 10px 15px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 10px;
+  
+  &:hover {
+    background-color: #218838;
+  }
+`;
+
+const Form = () => {
+  const [formData, setFormData] = useState({
     name: '',
     dob: '',
-    contactNumber: '',
+    contact: '',
     address: '',
-    aadharNumber: '',
+    aadhar: '',
     whatsapp: '',
     email: '',
     acceptance: false,
   });
 
+  const [isFormVisible, setIsFormVisible] = useState(true);
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setForm({
-      ...form,
+    setFormData({
+      ...formData,
       [name]: type === 'checkbox' ? checked : value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log('Form data:', form);
+    console.log(formData);
+    // You can add your form submission logic here
   };
 
+  const handleClose = () => {
+    setIsFormVisible(false);
+  };
+
+  if (!isFormVisible) return null;
+
   return (
-    <form className="form-container" onSubmit={handleSubmit}>
-      <h2>Membership/Volunteership Form</h2>
-      
-      <div className="form-group">
-        <label htmlFor="name">Name</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={form.name}
-          onChange={handleChange}
-          required
-        />
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="dob">Date of Birth</label>
-        <input
-          type="date"
-          id="dob"
-          name="dob"
-          value={form.dob}
-          onChange={handleChange}
-          required
-        />
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="contactNumber">Contact Number</label>
-        <input
-          type="tel"
-          id="contactNumber"
-          name="contactNumber"
-          value={form.contactNumber}
-          onChange={handleChange}
-          required
-        />
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="address">Address</label>
-        <input
-          type="text"
-          id="address"
-          name="address"
-          value={form.address}
-          onChange={handleChange}
-          required
-        />
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="aadharNumber">Aadhar Number</label>
-        <input
-          type="text"
-          id="aadharNumber"
-          name="aadharNumber"
-          value={form.aadharNumber}
-          onChange={handleChange}
-          required
-        />
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="whatsapp">WhatsApp</label>
-        <input
-          type="text"
-          id="whatsapp"
-          name="whatsapp"
-          value={form.whatsapp}
-          onChange={handleChange}
-          required
-        />
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="email">Email Address</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={form.email}
-          onChange={handleChange}
-          required
-        />
-      </div>
-
-      <div className="form-group">
-        <label htmlFor="acceptance">
-          <input
-            type="checkbox"
-            id="acceptance"
-            name="acceptance"
-            checked={form.acceptance}
+    <Container>
+      <Header>
+        <Title>Membership/Volunteership Form</Title>
+        <CloseButton onClick={handleClose}>X</CloseButton>
+      </Header>
+      <form onSubmit={handleSubmit}>
+        <FormGroup>
+          <Label htmlFor="name">Name</Label>
+          <Input
+            type="text"
+            id="name"
+            name="name"
+            value={formData.name}
             onChange={handleChange}
             required
           />
-          I hereby, declare that being the member of MAATI-16 will abide by all the rules and regulations and always follow the ethical code of conduct.
-        </label>
-      </div>
-
-      <button type="submit">Submit</button>
-
-      <style jsx>{`
-        .form-container {
-          max-width: 600px;
-          margin: 50px auto;
-          padding: 20px;
-          background-color: #fff;
-          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-          border-radius: 8px;
-        }
-
-        .form-container h2 {
-          margin-bottom: 20px;
-          font-size: 24px;
-          font-weight: 700;
-          text-align: center;
-        }
-
-        .form-group {
-          margin-bottom: 20px;
-        }
-
-        .form-group label {
-          display: block;
-          margin-bottom: 8px;
-          font-weight: 500;
-        }
-
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group input[type="tel"],
-        .form-group input[type="date"] {
-          width: 100%;
-          padding: 10px;
-          border: 1px solid #ccc;
-          border-radius: 4px;
-          font-size: 16px;
-        }
-
-        .form-group input[type="checkbox"] {
-          margin-right: 10px;
-        }
-
-        button {
-          width: 100%;
-          padding: 10px;
-          background-color: #ff9800;
-          color: #fff;
-          font-size: 18px;
-          border: none;
-          border-radius: 4px;
-          cursor: pointer;
-          transition: background-color 0.3s;
-        }
-
-        button:hover {
-          background-color: #e68900;
-        }
-      `}</style>
-    </form>
+        </FormGroup>
+        <FormGroup>
+          <Label htmlFor="dob">Date of Birth</Label>
+          <Input
+            type="date"
+            id="dob"
+            name="dob"
+            value={formData.dob}
+            onChange={handleChange}
+            required
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label htmlFor="contact">Contact Number</Label>
+          <Input
+            type="text"
+            id="contact"
+            name="contact"
+            value={formData.contact}
+            onChange={handleChange}
+            required
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label htmlFor="address">Address</Label>
+          <Input
+            type="text"
+            id="address"
+            name="address"
+            value={formData.address}
+            onChange={handleChange}
+            required
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label htmlFor="aadhar">Aadhar Number</Label>
+          <Input
+            type="text"
+            id="aadhar"
+            name="aadhar"
+            value={formData.aadhar}
+            onChange={handleChange}
+            required
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label htmlFor="whatsapp">Whatsapp Number</Label>
+          <Input
+            type="text"
+            id="whatsapp"
+            name="whatsapp"
+            value={formData.whatsapp}
+            onChange={handleChange}
+            required
+          />
+        </FormGroup>
+        <FormGroup>
+          <Label htmlFor="email">Email Address</Label>
+          <Input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+        </FormGroup>
+        <FormGroup>
+          <Checkbox
+            type="checkbox"
+            id="acceptance"
+            name="acceptance"
+            checked={formData.acceptance}
+            onChange={handleChange}
+            required
+          />
+          <Label htmlFor="acceptance">
+            I hereby, declare that being the member of MAATI-16 will abide by all the rules and regulations and always follow the ethical code of conduct.
+          </Label>
+        </FormGroup>
+        <SubmitButton type="submit">Submit</SubmitButton>
+      </form>
+    </Container>
   );
 };
 
-export default MembershipForm;
+export default Form;
