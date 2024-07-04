@@ -21,22 +21,6 @@ const PersonalDetails = () => {
         transition={{ duration: 0.5 }}
       >
         <motion.div
-          style={styles.imageContainer}
-          whileHover={{ scale: 1.05 }}
-        >
-          <img
-            src="https://designshack.net/wp-content/uploads/placeholder-image.png"
-            alt="Hemanshu Dubey"
-            style={styles.image}
-          />
-          <motion.div
-            style={styles.overlay}
-          >
-            <span style={styles.overlayText}>Hemanshu Dubey</span>
-          </motion.div>
-        </motion.div>
-
-        <motion.div
           style={styles.details}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -107,36 +91,6 @@ const styles = {
     alignItems: 'center',
     justifyContent: 'center',
     marginBottom: '32px',
-  },
-  imageContainer: {
-    position: 'relative',
-    marginBottom: '32px',
-  },
-  image: {
-    width: '200px',
-    height: '200px',
-    borderRadius: '50%',
-    objectFit: 'cover',
-  },
-  overlay: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-    borderRadius: '50%',
-    opacity: 0,
-    transition: 'opacity 0.3s',
-  },
-  overlayText: {
-    color: 'white',
-    fontSize: '20px',
-    fontWeight: 'bold',
-    textAlign: 'center',
   },
   details: {
     fontSize: '18px',
