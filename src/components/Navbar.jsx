@@ -44,8 +44,6 @@ const Navbar = () => {
     visible: { opacity: 1, y: 0 },
   };
 
-
-
   return (
     <header className="z-10 bg-gray-100 shadow">
       <nav className="container relative flex items-center justify-between py-4 mx-auto">
@@ -88,7 +86,6 @@ const Navbar = () => {
                   <Link
                     to="/personaldetails"
                     className="block w-full px-4 py-2 text-gray-800 transition-colors duration-300 rounded-lg hover:text-white hover:bg-amber-800"
-                    
                   >
                     Personal Details
                   </Link>
@@ -155,16 +152,45 @@ const Navbar = () => {
                     className="block px-4 py-2 text-gray-800 transition-colors duration-300 rounded-lg hover:text-white hover:bg-amber-800"
                     onClick={closeMenu}
                   >
-                    Careers
+                    Current Openings
+                  </Link>
+                </li>
+              </motion.ul>
+            </li>
+
+            <li className="relative group">
+              <span
+                className={`flex items-center cursor-pointer py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/gallery') ? 'bg-amber-800 text-white' : 'text-gray-800 group-hover:text-white group-hover:bg-amber-800'}`}
+                onClick={() => toggleDropdown('gallery')}
+                onMouseEnter={() => handleMouseEnter('gallery')}
+                onMouseLeave={handleMouseLeave}
+              >
+                <FaImages className="mr-2" />Gallery
+              </span>
+              <motion.ul
+                initial="hidden"
+                animate={activeDropdown === 'gallery' ? "visible" : "hidden"}
+                variants={dropdownVariants}
+                className={`absolute ${activeDropdown === 'gallery' ? 'block' : 'hidden'} mt-[1px] bg-white rounded-lg shadow-lg w-48 transition-all duration-300 ease-in-out z-20`}
+                onMouseEnter={() => handleMouseEnter('gallery')}
+                onMouseLeave={handleMouseLeave}
+              >
+                <li>
+                  <Link
+                    to="/photos"
+                    className="block px-4 py-2 text-gray-800 transition-colors duration-300 rounded-lg hover:text-white hover:bg-amber-800"
+                    onClick={closeMenu}
+                  >
+                    Photos
                   </Link>
                 </li>
                 <li>
                   <Link
-                    to="/internships"
+                    to="/videos"
                     className="block px-4 py-2 text-gray-800 transition-colors duration-300 rounded-lg hover:text-white hover:bg-amber-800"
                     onClick={closeMenu}
                   >
-                    Internships
+                    Videos
                   </Link>
                 </li>
               </motion.ul>
@@ -172,235 +198,220 @@ const Navbar = () => {
 
             <li>
               <Link
-                to="/gallery"
-                className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/gallery') ? 'bg-amber-800 text-white' : 'text-gray-800 hover:text-white hover:bg-amber-800'}`}
-                onClick={closeMenu}
+                to="/projects"
+                className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/projects') ? 'bg-amber-800 text-white' : 'text-gray-800 hover:text-white hover:bg-amber-800'}`}
               >
-                <FaImages className="mr-2" />Gallery
+                <FaProjectDiagram className="mr-2" />Our Projects
               </Link>
             </li>
+
             <li>
               <Link
-                to="/our-works"
-                className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/our-works') ? 'bg-amber-800 text-white' : 'text-gray-800 hover:text-white hover:bg-amber-800'}`}
-                onClick={closeMenu}
+                to="/blog"
+                className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/blog') ? 'bg-amber-800 text-white' : 'text-gray-800 hover:text-white hover:bg-amber-800'}`}
               >
-                <FaProjectDiagram className="mr-2" />Our Works
+                <FaBlog className="mr-2" />Blog
               </Link>
             </li>
+
             <li>
               <Link
-                to="/blogs"
-                className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/blogs') ? 'bg-amber-800 text-white' : 'text-gray-800 hover:text-white hover:bg-amber-800'}`}
-                onClick={closeMenu}
+                to="/contact"
+                className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/contact') ? 'bg-amber-800 text-white' : 'text-gray-800 hover:text-white hover:bg-amber-800'}`}
               >
-                <FaBlog className="mr-2" />Blogs
+                <FaPhone className="mr-2" />Contact
               </Link>
             </li>
-            {/* <li>
-              <Link
-                to="/contact-us"
-                className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/contact-us') ? 'bg-amber-800 text-white' : 'text-gray-800 hover:text-white hover:bg-amber-800'}`}
-                onClick={closeMenu}
-              >
-                <FaPhone className="mr-2" />Contact Us
-              </Link>
-            </li> */}
+
             <li>
               <Link
-                to="/donate-us"
-                className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 bg-yellow-500 text-white hover:bg-amber-900`}
-                onClick={closeMenu}
+                to="/donate"
+                className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/donate') ? 'bg-amber-800 text-white' : 'text-gray-800 hover:text-white hover:bg-amber-800'}`}
               >
-                <FaDonate className="mr-2" />Donate Us
+                <FaDonate className="mr-2" />Donate
               </Link>
             </li>
           </ul>
         </div>
 
-        <div className="absolute md:hidden right-4 top-9 ">
-          {!isMenuOpen ? (
-            <button
-              onClick={toggleMenu}
-              className="block text-gray-800 hover:text-amber-800 focus:outline-none"
-            >
-              <FaBars className="w-6 h-6" />
-            </button>
-          ) : (
-            <button
-              onClick={closeMenu}
-              className="block text-gray-800 hover:text-amber-800 focus:outline-none"
-            >
-              <FaTimes className="w-6 h-6" />
-            </button>
-          )}
+        <div className="md:hidden">
+          <button
+            onClick={toggleMenu}
+            className="flex items-center p-2 text-gray-800 rounded-md focus:outline-none focus:shadow-outline"
+          >
+            {isMenuOpen ? <FaTimes className="w-6 h-6" /> : <FaBars className="w-6 h-6" />}
+          </button>
         </div>
-
-        <ul className={`md:hidden w-[90%] rounded-lg mx-auto ${isMenuOpen ? 'flex-col bg-gray-100 absolute inset-x-0 top-[64px] z-50' : 'hidden'}`}>
-          <li>
-            <Link
-              to="/"
-              className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/') ? 'bg-amber-800 text-white' : 'text-gray-800 hover:text-white hover:bg-amber-800'}`}
-              onClick={closeMenu}
-            >
-              <FaHome className="mr-2" />Home
-            </Link>
-          </li>
-
-          <li className="relative group">
-            <span
-              className={`flex items-center cursor-pointer py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/about-us') ? 'bg-amber-800 text-white' : 'text-gray-800 group-hover:text-white group-hover:bg-amber-800'}`}
-              onClick={() => toggleDropdown('aboutUs')}
-              onMouseEnter={() => handleMouseEnter('aboutUs')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <FaInfoCircle className="mr-2" />About Us
-            </span>
-            <motion.ul
-              initial="hidden"
-              animate={activeDropdown === 'aboutUs' ? "visible" : "hidden"}
-              variants={dropdownVariants}
-              className={`absolute ${activeDropdown === 'aboutUs' ? 'block' : 'hidden'} mt-[1px] bg-white rounded shadow-lg w-56 transition-all duration-300 ease-in-out z-20`}
-              onMouseEnter={() => handleMouseEnter('aboutUs')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <li>
-                <Link
-                  to="/personal-details"
-                  className="block px-4 py-2 text-gray-800 transition-colors duration-300 rounded-lg hover:text-white hover:bg-amber-800"
-                  onClick={closeMenu}
-                >
-                  Personal Details
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/core-members"
-                  className="block px-4 py-2 text-gray-800 transition-colors duration-300 rounded-lg hover:text-white hover:bg-amber-800"
-                  onClick={closeMenu}
-                >
-                  Core Members
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/motto-objective"
-                  className="block px-4 py-2 text-gray-800 transition-colors duration-300 rounded-lg hover:text-white hover:bg-amber-800"
-                  onClick={closeMenu}
-                >
-                  Our Motto and Objective
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/faqs-policies"
-                  className="block px-4 py-2 text-gray-800 transition-colors duration-300 rounded-lg hover:text-white hover:bg-amber-800"
-                  onClick={closeMenu}
-                >
-                  FAQs and Policies
-                </Link>
-              </li>
-            </motion.ul>
-          </li>
-
-          <li className="relative group">
-            <span
-              className={`flex items-center cursor-pointer py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/careers') ? 'bg-amber-800 text-white' : 'text-gray-800 group-hover:text-white group-hover:bg-amber-800'}`}
-              onClick={() => toggleDropdown('careers')}
-              onMouseEnter={() => handleMouseEnter('careers')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <FaBriefcase className="mr-2" />Careers
-            </span>
-            <motion.ul
-              initial="hidden"
-              animate={activeDropdown === 'careers' ? "visible" : "hidden"}
-              variants={dropdownVariants}
-              className={`absolute ${activeDropdown === 'careers' ? 'block' : 'hidden'} mt-[1px] bg-white shadow-lg w-[270px] rounded-lg transition-all duration-300 ease-in-out z-20`}
-              onMouseEnter={() => handleMouseEnter('careers')}
-              onMouseLeave={handleMouseLeave}
-            >
-              <li>
-                <Link
-                  to="/membership-volunteership"
-                  className="block px-4 py-2 text-gray-800 transition-colors duration-300 rounded-lg hover:text-white hover:bg-amber-800"
-                  onClick={closeMenu}
-                >
-                  Membership/Volunteership Form
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/careers"
-                  className="block px-4 py-2 text-gray-800 transition-colors duration-300 rounded-lg hover:text-white hover:bg-amber-800"
-                  onClick={closeMenu}
-                >
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/internships"
-                  className="block px-4 py-2 text-gray-800 transition-colors duration-300 rounded-lg hover:text-white hover:bg-amber-800"
-                  onClick={closeMenu}
-                >
-                  Internships
-                </Link>
-              </li>
-            </motion.ul>
-          </li>
-
-          <li>
-            <Link
-              to="/gallery"
-              className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/gallery') ? 'bg-amber-800 text-white' : 'text-gray-800 hover:text-white hover:bg-amber-800'}`}
-              onClick={closeMenu}
-            >
-              <FaImages className="mr-2" />Gallery
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/our-works"
-              className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/our-works') ? 'bg-amber-800 text-white' : 'text-gray-800 hover:text-white hover:bg-amber-800'}`}
-              onClick={closeMenu}
-            >
-              <FaProjectDiagram className="mr-2" />Our Works
-            </Link>
-          </li>
-          <li>
-            <Link
-              to="/blogs"
-              className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/blogs') ? 'bg-amber-800 text-white' : 'text-gray-800 hover:text-white hover:bg-amber-800'}`}
-              onClick={closeMenu}
-            >
-              <FaBlog className="mr-2" />Blogs
-            </Link>
-          </li>
-          {/* <li>
-            <Link
-              to="/contact-us"
-              className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/contact-us') ? 'bg-amber-800 text-white' : 'text-gray-800 hover:text-white hover:bg-amber-800'}`}
-              onClick={closeMenu}
-            >
-              <FaPhone className="mr-2" />Contact Us
-            </Link>
-          </li> */}
-          <li>
-            <Link
-              to="/donate-us"
-              className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 bg-yellow-500 text-white hover:bg-amber-900`}
-              onClick={closeMenu}
-            >
-              <FaDonate className="mr-2" />Donate Us
-            </Link>
-          </li>
-        </ul>
       </nav>
 
-    </header>
-    
+      {isMenuOpen && (
+        <div className="md:hidden">
+          <ul className="flex flex-col p-4 bg-white shadow-lg space-y-4">
+            <li>
+              <Link
+                to="/"
+                className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/') ? 'bg-amber-800 text-white' : 'text-gray-800 hover:text-white hover:bg-amber-800'}`}
+                onClick={closeMenu}
+              >
+                <FaHome className="mr-2" />Home
+              </Link>
+            </li>
+
+            <li>
+              <span
+                className={`flex items-center cursor-pointer py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/about-us') ? 'bg-amber-800 text-white' : 'text-gray-800'}`}
+                onClick={() => toggleDropdown('aboutUs')}
+              >
+                <FaInfoCircle className="mr-2" />About Us
+              </span>
+              {activeDropdown === 'aboutUs' && (
+                <ul className="pl-6 space-y-2">
+                  <li>
+                    <Link
+                      to="/personaldetails"
+                      className="block text-gray-800 transition-colors duration-300 hover:text-white hover:bg-amber-800"
+                      onClick={closeMenu}
+                    >
+                      Personal Details
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/core-members"
+                      className="block text-gray-800 transition-colors duration-300 hover:text-white hover:bg-amber-800"
+                      onClick={closeMenu}
+                    >
+                      Core Members
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/motto-objective"
+                      className="block text-gray-800 transition-colors duration-300 hover:text-white hover:bg-amber-800"
+                      onClick={closeMenu}
+                    >
+                      Our Motto and Objective
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/faqs"
+                      className="block text-gray-800 transition-colors duration-300 hover:text-white hover:bg-amber-800"
+                      onClick={closeMenu}
+                    >
+                      FAQs and Policies
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+
+            <li>
+              <span
+                className={`flex items-center cursor-pointer py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/careers') ? 'bg-amber-800 text-white' : 'text-gray-800'}`}
+                onClick={() => toggleDropdown('careers')}
+              >
+                <FaBriefcase className="mr-2" />Careers
+              </span>
+              {activeDropdown === 'careers' && (
+                <ul className="pl-6 space-y-2">
+                  <li>
+                    <Link
+                      to="/membership-volunteership"
+                      className="block text-gray-800 transition-colors duration-300 hover:text-white hover:bg-amber-800"
+                      onClick={closeMenu}
+                    >
+                      Membership/Volunteership Form
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/careers"
+                      className="block text-gray-800 transition-colors duration-300 hover:text-white hover:bg-amber-800"
+                      onClick={closeMenu}
+                    >
+                      Current Openings
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+
+            <li>
+              <span
+                className={`flex items-center cursor-pointer py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/gallery') ? 'bg-amber-800 text-white' : 'text-gray-800'}`}
+                onClick={() => toggleDropdown('gallery')}
+              >
+                <FaImages className="mr-2" />Gallery
+              </span>
+              {activeDropdown === 'gallery' && (
+                <ul className="pl-6 space-y-2">
+                  <li>
+                    <Link
+                      to="/photos"
+                      className="block text-gray-800 transition-colors duration-300 hover:text-white hover:bg-amber-800"
+                      onClick={closeMenu}
+                    >
+                      Photos
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/videos"
+                      className="block text-gray-800 transition-colors duration-300 hover:text-white hover:bg-amber-800"
+                      onClick={closeMenu}
+                    >
+                      Videos
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+
+            <li>
+              <Link
+                to="/projects"
+                className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/projects') ? 'bg-amber-800 text-white' : 'text-gray-800 hover:text-white hover:bg-amber-800'}`}
+                onClick={closeMenu}
+              >
+                <FaProjectDiagram className="mr-2" />Our Projects
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/blog"
+                className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/blog') ? 'bg-amber-800 text-white' : 'text-gray-800 hover:text-white hover:bg-amber-800'}`}
+                onClick={closeMenu}
+              >
+                <FaBlog className="mr-2" />Blog
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/contact"
+                className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/contact') ? 'bg-amber-800 text-white' : 'text-gray-800 hover:text-white hover:bg-amber-800'}`}
+                onClick={closeMenu}
+              >
+                <FaPhone className="mr-2" />Contact
+              </Link>
+            </li>
+
+            <li>
+              <Link
+                to="/donate"
+                className={`flex items-center py-2 px-4 rounded-lg transition-colors duration-300 ${isActive('/donate') ? 'bg-amber-800 text-white' : 'text-gray-800 hover:text-white hover:bg-amber-800'}`}
+                onClick={closeMenu}
+              >
+                <FaDonate className="mr-2" />Donate
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
+    </div>
   );
-};
+}
 
 export default Navbar;
