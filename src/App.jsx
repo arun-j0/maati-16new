@@ -10,8 +10,7 @@ import FaqsPage from './pages/FaqsPage';
 import MembershipPage from './pages/MembershipPage';
 import DonationPage from './pages/DonationPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
-
-
+import MottoObjectivePage from './pages/MottoObjectivePage'; // Import the MottoObjectivePage
 
 function App() {
     return (
@@ -23,7 +22,7 @@ function App() {
                 <Route path="/our-works" element={<WorkPage />} />
                 <Route path="/personaldetails" element={<PersonalDetailsPage />} />
                 <Route path="/faqs" element={<FaqsPage />} />
-               
+                <Route path="/motto-objective" element={<MottoObjectivePage />} /> {/* Route for Motto and Objective */}
                 <Route path="/membership-volunteership" element={<MembershipPage />} />
                 <Route path="/donate-us" element={<DonationPage />} />
                 <Route path="/privacy-policies" element={<PrivacyPolicyPage />} />
