@@ -1,4 +1,5 @@
 import React from 'react';
+import { useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -61,14 +62,15 @@ const Button = styled.button`
 `;
 
 const MottoPage = () => {
+  const history = useHistory();
+
   const handleClose = () => {
     console.log('Close button clicked');
     // Add your close functionality here
   };
 
   const handleObjectives = () => {
-    console.log('Objectives button clicked');
-    // Add your objectives functionality here
+    history.push('/objectives');
   };
 
   return (
