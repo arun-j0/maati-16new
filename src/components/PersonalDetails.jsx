@@ -20,21 +20,8 @@ const PersonalDetails = () => {
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="relative mb-4 md:mb-0 md:mr-8">
-          <img
-            src="https://designshack.net/wp-content/uploads/placeholder-image.png"
-            alt="Hemanshu Dubey"
-            className="object-cover w-64 h-64 rounded-full"
-          />
-          <motion.div
-            className="absolute inset-0 flex items-center justify-center text-white transition-opacity duration-300 bg-black bg-opacity-75 rounded-full hover:opacity-0"
-          >
-            <span className="text-lg font-bold text-center">Hemanshu Dubey</span>
-          </motion.div>
-        </div>
-
         <motion.div
-          className="text-lg"
+          className="text-lg md:mr-8 md:order-1 order-2"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
@@ -44,13 +31,13 @@ const PersonalDetails = () => {
               {[
                 { label: <><FaUser className="inline mr-2" />Founder:</>, value: 'Hemanshu Dubey' },
                 { label: <><FaPhone className="inline mr-2" />Contact Number / WhatsApp:</>, value: '+91 9870112134' },
-                { label: <><FaMapMarkerAlt className="inline mr-2" />Registered Address:</>, value: 'Plot D-5, Block D,'},
-                { value:   <>
+                { label: <><FaMapMarkerAlt className="inline mr-2" />Registered Address:</>, value: 'Plot D-5, Block D,' },
+                { value: <>
                   Om Vihar, Phase – V, <br />
                   Near West Point School, <br />
                   New Delhi. <br />
                   Zip Code – 110059
-                </>},
+                </> },
                 { label: <><FaInstagram className="inline mr-2" />Instagram:</>, value: <a href="https://www.instagram.com/maati16._?igsh=MWt1Y2Y3cThzem5xaQ==" className="text-black hover:text-gray-700">maati16</a> },
                 { label: <><FaLinkedin className="inline mr-2" />LinkedIn:</>, value: <a href="https://www.linkedin.com/in/hemanshu-dubey-7257092b5" className="text-black hover:text-gray-700">Hemanshu Dubey</a> },
               ].map((detail, index) => (
@@ -67,6 +54,19 @@ const PersonalDetails = () => {
             </tbody>
           </table>
         </motion.div>
+
+        <div className="relative mb-4 md:mb-0 md:ml-8 md:order-2 order-1">
+          <img
+            src="https://designshack.net/wp-content/uploads/placeholder-image.png"
+            alt="Hemanshu Dubey"
+            className="object-cover w-64 h-64 rounded-full"
+          />
+          <motion.div
+            className="absolute inset-0 flex items-center justify-center text-white transition-opacity duration-300 bg-black bg-opacity-75 rounded-full hover:opacity-0"
+          >
+            <span className="text-lg font-bold text-center">Hemanshu Dubey</span>
+          </motion.div>
+        </div>
       </motion.div>
     </div>
   );
