@@ -22,7 +22,7 @@ function App() {
                 <Route path="/our-works" element={<WorkPage />} />
                 <Route path="/personaldetails" element={<PersonalDetailsPage />} />
                 <Route path="/faqs" element={<FaqsPage />} />
-                <Route path="/motto" element={<MottoPage />} /> {/* Route for MottoPage */}
+                <Route path="/motto-objective" element={<MottoPage />} /> {/* Route for MottoPage */}
                 <Route path="/objectives" element={<ObjectivesPage />} /> {/* Route for ObjectivesPage */}
                 <Route path="/membership-volunteership" element={<MembershipPage />} />
                 <Route path="/donate-us" element={<DonationPage />} />

@@ -70,7 +70,7 @@ const SponsorSection = () => {
         variants={titleVariants}
       >
         <span className='underline-travel'>SPONSOR
-        <div class="box-line"></div>
+        <div className="box-line"></div>
         </span>
       </motion.h2>
       <motion.p
