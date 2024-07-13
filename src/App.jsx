@@ -11,6 +11,7 @@ import DonationPage from './pages/DonationPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import MottoPage from './pages/MottoPage'; // Import MottoPage
 import ObjectivesPage from './pages/ObjectivesPage'; // Import ObjectivesPage
+import BlogDetailPage from './pages/BlogDetailPage';
 
 function App() {
     return (
@@ -27,6 +28,7 @@ function App() {
                 <Route path="/membership-volunteership" element={<MembershipPage />} />
                 <Route path="/donate-us" element={<DonationPage />} />
                 <Route path="/privacy-policies" element={<PrivacyPolicyPage />} />
+                <Route path="/blogs/:id" element={<BlogDetailPage/>}/>
             </Routes>
         </Router>
     );

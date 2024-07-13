@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import { motion } from 'framer-motion';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import { Link } from 'react-router-dom'; // Import Link
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import hero1 from '../assets/hero1.jpg';
@@ -28,23 +29,37 @@ const HeroSection = () => {
       title: 'Welcome to Our NGO',
       description: 'We are dedicated to making the world a better place.',
       button: 'Learn More',
-      position: 'md:left-40', // Adjust positioning class
+      link: '#intro', // Link to the intro section on the same page
+      position: 'md:left-40',
+      isAnchor: true, // Indicates this link is an anchor
     },
     {
       image: hero2,
       title: 'Support Our Causes',
       description: 'Your donations help us achieve our goals.',
       button: 'Donate Now',
-      position: 'mx-auto md:left-[120px]', // Adjust positioning class
+      link: '/donate-us', // Link to your Donation page
+      position: 'mx-auto md:left-[120px]',
+      isAnchor: false,
     },
     {
       image: hero3,
       title: 'Join Us',
       description: 'Become a volunteer and make a difference.',
       button: 'Join Us',
-      position: 'mx-auto md:left-[120px]', // Adjust positioning class
+      link: '/membership-volunteership', // Link to your Join Us page
+      position: 'mx-auto md:left-[120px]',
+      isAnchor: false,
     },
   ];
+
+  const handleAnchorClick = (event) => {
+    event.preventDefault(); // Prevent default anchor behavior
+    const target = document.querySelector(event.currentTarget.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth' }); // Smooth scroll to the target
+    }
+  };
 
   return (
     <section className="relative border-[#fee57e] border-8">
@@ -60,9 +75,19 @@ const HeroSection = () => {
             >
               <h2 className="mb-4 text-4xl font-bold">{slide.title}</h2>
               <p className="mb-4 text-lg">{slide.description}</p>
-              <button className="px-4 py-2 font-bold text-white transition-colors duration-300 rounded-lg bg-amber-500 hover:bg-amber-600">
-                {slide.button}
-              </button>
+              {slide.isAnchor ? (
+                <a href={slide.link} className="inline-block" onClick={handleAnchorClick}>
+                  <button className="px-4 py-2 font-bold text-white transition-colors duration-300 rounded-lg bg-amber-500 hover:bg-amber-600">
+                    {slide.button}
+                  </button>
+                </a>
+              ) : (
+                <Link to={slide.link} className="inline-block">
+                  <button className="px-4 py-2 font-bold text-white transition-colors duration-300 rounded-lg bg-amber-500 hover:bg-amber-600">
+                    {slide.button}
+                  </button>
+                </Link>
+              )}
             </motion.div>
           </div>
         ))}
@@ -71,26 +96,22 @@ const HeroSection = () => {
   );
 };
 
-const NextArrow = ({ onClick }) => {
-  return (
-    <div
-      className="absolute z-10 hidden text-3xl text-white transition-opacity duration-300 transform -translate-y-1/2 opacity-75 cursor-pointer right-4 top-1/2 hover:opacity-100 md:block"
-      onClick={onClick}
-    >
-      <FaArrowRight />
-    </div>
-  );
-};
+const NextArrow = ({ onClick }) => (
+  <div
+    className="absolute z-10 hidden text-3xl text-white transition-opacity duration-300 transform -translate-y-1/2 opacity-75 cursor-pointer right-4 top-1/2 hover:opacity-100 md:block"
+    onClick={onClick}
+  >
+    <FaArrowRight />
+  </div>
+);
 
-const PrevArrow = ({ onClick }) => {
-  return (
-    <div
-      className="absolute z-10 hidden text-3xl text-white transition-opacity duration-300 transform -translate-y-1/2 opacity-75 cursor-pointer left-4 top-1/2 hover:opacity-100 md:block"
-      onClick={onClick}
-    >
-      <FaArrowLeft />
-    </div>
-  );
-};
+const PrevArrow = ({ onClick }) => (
+  <div
+    className="absolute z-10 hidden text-3xl text-white transition-opacity duration-300 transform -translate-y-1/2 opacity-75 cursor-pointer left-4 top-1/2 hover:opacity-100 md:block"
+    onClick={onClick}
+  >
+    <FaArrowLeft />
+  </div>
+);
 
 export default HeroSection;

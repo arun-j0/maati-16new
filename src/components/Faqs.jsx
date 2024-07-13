@@ -18,7 +18,7 @@ const FAQs = () => {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                    FAQs and Policies
+                    <span className='underline-travel'>FAQs and Policies</span> 
                 </motion.h2>
                 <motion.div
                     className="w-full max-w-3xl p-8 overflow-auto bg-white rounded-md shadow-lg"

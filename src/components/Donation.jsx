@@ -1,61 +1,5 @@
 import React, { useState } from 'react';
-import styled from 'styled-components';
-import { motion} from 'framer-motion';
-const Container = styled.div`
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  width: 100%;
-  margin: 20px auto;
-  position: relative;
-`;
-
-const Header = styled.div`
-  text-align: center;
-  margin-bottom: 20px;
-`;
-
-const Title = styled.h2`
-  margin-bottom: 10px;
-`;
-
-const BankDetails = styled.p`
-  margin: 5px 0;
-`;
-
-const FormGroup = styled.div`
-  margin-bottom: 15px;
-`;
-
-const Label = styled.label`
-  display: block;
-  margin-bottom: 5px;
-`;
-
-const Input = styled.input`
-  width: calc(100% - 10px);
-  padding: 8px 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  display: block;
-`;
-
-const SubmitButton = styled.button`
-  display: inline-block;
-  
-  color: white;
-  padding: 10px 15px;
-  text-align: center;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 100%;
-  margin-top: 10px;
-  
-
-`;
+import { motion } from 'framer-motion';
 
 const DonationForm = () => {
   const [formData, setFormData] = useState({
@@ -81,90 +25,107 @@ const DonationForm = () => {
   };
 
   return (
-    <div className='border-[#fee57e] border-8'>
-    <motion.h2
+    <div className="border-8 border-[#fee57e] bg-gray-100 pb-3">
+      <motion.h2
         className="pt-12 pb-5 mb-4 text-4xl font-bold text-center"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-       <span className='text-4xl font-bold text-[#280101] underline-travel md:text-6xl'> DONATION FORM</span>
+        <span className="text-4xl font-bold text-[#280101] md:text-6xl underline-travel">
+          DONATION FORM
+        </span>
       </motion.h2>
-    <Container>
-
-      <Header
-      initial={{ y: -50, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.5 }}>
-       
-        <BankDetails><strong>Account no:</strong> 49918100000881</BankDetails>
-        <BankDetails><strong>Account Holder Name:</strong> Hemanshu</BankDetails>
-        <BankDetails><strong>IFSC:</strong> BARB0BUDDHA (5th Character is ZERO)</BankDetails>
-        <BankDetails><strong>Branch:</strong> Buddha Colony</BankDetails>
-        <BankDetails><strong>Pay Online:</strong> 6205415221@ybl</BankDetails>
-      </Header>
-      <motion.form onSubmit={handleSubmit}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.5, duration: 0.5 }}>
-        <FormGroup>
-          <Label htmlFor="name">Name</Label>
-          <Input
-            type="text"
-            id="name"
-            name="name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label htmlFor="address">Address</Label>
-          <Input
-            type="text"
-            id="address"
-            name="address"
-            value={formData.address}
-            onChange={handleChange}
-            required
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label htmlFor="email">Email ID</Label>
-          <Input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label htmlFor="pan">PAN</Label>
-          <Input
-            type="text"
-            id="pan"
-            name="pan"
-            value={formData.pan}
-            onChange={handleChange}
-            required
-          />
-        </FormGroup>
-        <FormGroup>
-          <Label htmlFor="amount">Amount to Donate</Label>
-          <Input
-            type="number"
-            id="amount"
-            name="amount"
-            value={formData.amount}
-            onChange={handleChange}
-            required
-          />
-        </FormGroup>
-        <SubmitButton type="submit" className='bg-amber-500 hover:bg-amber-600'>Donate</SubmitButton>
-      </motion.form>
-    </Container>
+      <div className="max-w-md p-6 mx-auto bg-white rounded-lg shadow-md">
+        <motion.div
+          className="mb-5 text-center"
+          initial={{ y: -50, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+        >
+          <motion.p className="font-bold"><strong>Account No:</strong> 49918100000881</motion.p>
+          <motion.p className="font-bold"><strong>Account Holder Name:</strong> Hemanshu</motion.p>
+          <motion.p className="font-bold"><strong>IFSC:</strong> BARB0BUDDHA (5th Character is ZERO)</motion.p>
+          <motion.p className="font-bold"><strong>Branch:</strong> Buddha Colony</motion.p>
+          <motionp className="font-bold"><strong>Pay Online:</strong> 6205415221@ybl</motionp>
+        </motion.div>
+        <motion.form
+          onSubmit={handleSubmit}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
+          <div className="mb-4">
+            <label htmlFor="name" className="block mb-2">Name</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+              className="w-full p-2 border border-gray-300 rounded"
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="address" className="block mb-2">Address</label>
+            <input
+              type="text"
+              id="address"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+              required
+              className="w-full p-2 border border-gray-300 rounded"
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="email" className="block mb-2">Email ID</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full p-2 border border-gray-300 rounded"
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="pan" className="block mb-2">PAN</label>
+            <input
+              type="text"
+              id="pan"
+              name="pan"
+              value={formData.pan}
+              onChange={handleChange}
+              required
+              className="w-full p-2 border border-gray-300 rounded"
+            />
+          </div>
+          <div className="mb-4">
+            <label htmlFor="amount" className="block mb-2">Amount to Donate</label>
+            <input
+              type="number"
+              id="amount"
+              name="amount"
+              value={formData.amount}
+              onChange={handleChange}
+              required
+              className="w-full p-2 border border-gray-300 rounded"
+            />
+          </div>
+          <motion.button
+            type="submit"
+            className="w-full px-4 py-2 text-white rounded bg-amber-500 hover:bg-amber-600"
+            initial={{ scale: 0.95 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.2 }}
+          >
+            Donate
+          </motion.button>
+        </motion.form>
+      </div>
     </div>
   );
 };

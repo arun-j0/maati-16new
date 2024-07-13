@@ -113,9 +113,7 @@ const BlogPage = () => {
   const [searchQuery, setSearchQuery] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 12;
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  
   const filteredBlogs = blogs.filter(blog => {
     return (
       blog.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -131,6 +129,14 @@ const BlogPage = () => {
   const currentBlogs = sortedBlogs.slice(indexOfFirstBlog, indexOfLastBlog);
 
   const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+    scrollToTop();
+  }, []);
 
   return (
     <>

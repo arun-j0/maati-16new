@@ -28,7 +28,7 @@ const IntroSection = () => {
   };
 
   return (
-    <section ref={ref} className="flex flex-col items-center justify-center min-h-[70vh] p-8 bg-gray-100 md:flex-row border-[#fee57e] border-t-0 border-8">
+    <section ref={ref} className="flex flex-col items-center justify-center min-h-[70vh] p-8 bg-gray-100 md:flex-row border-[#fee57e] border-t-0 border-8" id='intro'>
       <motion.div
         initial="hidden"
         animate={controls}

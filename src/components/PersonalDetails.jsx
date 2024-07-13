@@ -15,13 +15,13 @@ const PersonalDetails = () => {
       </motion.h2>
 
       <motion.div
-        className="flex flex-col md:flex-row items-center md:items-start mb-8"
+        className="flex flex-col items-center mb-8 md:flex-row md:items-start"
         initial={{ y: -50, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
         <motion.div
-          className="text-lg md:mr-8 md:order-1 order-2"
+          className="order-2 text-lg md:mr-8 md:order-1"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
@@ -55,7 +55,7 @@ const PersonalDetails = () => {
           </table>
         </motion.div>
 
-        <div className="relative mb-4 md:mb-0 md:ml-8 md:order-2 order-1">
+        <div className="relative order-1 mb-4 md:mb-0 md:ml-8 md:order-2">
           <img
             src="https://designshack.net/wp-content/uploads/placeholder-image.png"
             alt="Hemanshu Dubey"
