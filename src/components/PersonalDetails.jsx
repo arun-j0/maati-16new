@@ -60,7 +60,7 @@ const PersonalDetails = () => {
           <img
             src={HemantDubeyImage}
             alt="Hemanshu Dubey"
-            className="object-cover w-64 h-64 rounded-full"
+            className="object-cover w-64 h-64 rounded-full md:w-96 md:h-96" // Adjusted image size for better display
           />
           <motion.div
             className="absolute inset-0 flex items-center justify-center text-white transition-opacity duration-300 bg-black bg-opacity-75 rounded-full hover:opacity-0"
