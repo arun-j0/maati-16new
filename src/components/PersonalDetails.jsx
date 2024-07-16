@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaPhone, FaMapMarkerAlt, FaInstagram, FaLinkedin, FaUser } from 'react-icons/fa';
+import HemantDubeyImage from '../assets/Hemant_Dubey.jpg'; // Import the image
 
 const PersonalDetails = () => {
   return (
@@ -57,7 +58,7 @@ const PersonalDetails = () => {
 
         <div className="relative order-1 mb-4 md:mb-0 md:ml-8 md:order-2">
           <img
-            src="https://designshack.net/wp-content/uploads/placeholder-image.png"
+            src={HemantDubeyImage}
             alt="Hemanshu Dubey"
             className="object-cover w-64 h-64 rounded-full"
           />
