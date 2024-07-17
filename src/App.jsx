@@ -9,35 +9,31 @@ import FaqsPage from './pages/FaqsPage';
 import MembershipPage from './pages/MembershipPage';
 import DonationPage from './pages/DonationPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
-import MottoPage from './pages/MottoPage';
-import ObjectivesPage from './pages/ObjectivesPage';
+import MottoPage from './pages/MottoPage'; // Import MottoPage
+import ObjectivesPage from './pages/ObjectivesPage'; // Import ObjectivesPage
 import BlogDetailPage from './pages/BlogDetailPage';
-import CoreMembers from './components/CoreMembers';
-import Footer from './components/Footer';
+import CoreMembers from './components/CoreMembers'; // Import CoreMembers component
 
 function App() {
-  return (
-    <Router>
-      <div>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/gallery" element={<GalleryPage />} />
-          <Route path="/blogs" element={<BlogPage />} />
-          <Route path="/our-works" element={<WorkPage />} />
-          <Route path="/personaldetails" element={<PersonalDetailsPage />} />
-          <Route path="/faqs" element={<FaqsPage />} />
-          <Route path="/motto-objective" element={<MottoPage />} />
-          <Route path="/objectives" element={<ObjectivesPage />} />
-          <Route path="/membership-volunteership" element={<MembershipPage />} />
-          <Route path="/donate-us" element={<DonationPage />} />
-          <Route path="/privacy-policies" element={<PrivacyPolicyPage />} />
-          <Route path="/blogs/:id" element={<BlogDetailPage />} />
-          <Route path="/core-members" element={<CoreMembers />} />
-        </Routes>
-        <Footer />
-      </div>
-    </Router>
-  );
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/gallery" element={<GalleryPage />} />
+                <Route path="/blogs" element={<BlogPage />} />
+                <Route path="/our-works" element={<WorkPage />} />
+                <Route path="/personaldetails" element={<PersonalDetailsPage />} />
+                <Route path="/faqs" element={<FaqsPage />} />
+                <Route path="/motto-objective" element={<MottoPage />} /> {/* Route for MottoPage */}
+                <Route path="/objectives" element={<ObjectivesPage />} /> {/* Route for ObjectivesPage */}
+                <Route path="/membership-volunteership" element={<MembershipPage />} />
+                <Route path="/donate-us" element={<DonationPage />} />
+                <Route path="/privacy-policies" element={<PrivacyPolicyPage />} />
+                <Route path="/blogs/:id" element={<BlogDetailPage />} />
+                <Route path="/core-members" element={<CoreMembers />} /> {/* Route for CoreMembers */}
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
