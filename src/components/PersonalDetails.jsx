@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from 'framer-motion'; 
+import { motion } from 'framer-motion';
 import { FaPhone, FaMapMarkerAlt, FaInstagram, FaLinkedin, FaUser } from 'react-icons/fa';
 import HemanshuDubeyImage from '../assets/Hemanshu_Dubey.jpg'; // Corrected the image path
 
@@ -56,17 +56,12 @@ const PersonalDetails = () => {
           </table>
         </motion.div>
 
-        <div className="relative order-1 mb-4 md:mb-0 md:ml-8 md:order-2">
+        <div className="order-1 mb-4 md:mb-0 md:ml-8 md:order-2">
           <img
             src={HemanshuDubeyImage}
             alt="Hemanshu Dubey"
             className="object-cover w-64 h-64 rounded-full md:w-96 md:h-96" // Adjusted image size for better display
           />
-          <motion.div
-            className="absolute inset-0 flex items-center justify-center text-white transition-opacity duration-300 bg-black bg-opacity-75 rounded-full hover:opacity-0"
-          >
-            <span className="text-lg font-bold text-center">Hemanshu Dubey</span>
-          </motion.div>
         </div>
       </motion.div>
     </div>
