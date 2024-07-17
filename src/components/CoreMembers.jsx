@@ -58,7 +58,7 @@ const CoreMembers = () => {
 
           <li className="mb-8 flex flex-col items-center bg-gray-50 p-4 rounded-lg shadow-lg sm:flex-row sm:text-left sm:p-6">
             <img
-              src="path/to/arunav_image.jpg"
+              src="src/assets/Arunav_Prakhar.jpg"
               alt="Arunav Prakhar"
               className="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
