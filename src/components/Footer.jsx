@@ -67,16 +67,16 @@ const Footer = () => {
               <Link to="/core-members" className="hover:text-amber-800">Core Members</Link>
             </li>
             <li>
-              <Link to="/core-members" className="hover:text-amber-800">Our Motto and Objective</Link>
+              <Link to="/motto-and-objective" className="hover:text-amber-800">Our Motto and Objective</Link>
             </li>
             <li>
-              <Link to="/core-members" className="hover:text-amber-800">FAQs and Policies</Link>
+              <Link to="/faqs-and-policies" className="hover:text-amber-800">FAQs and Policies</Link>
             </li>
             <li>
-              <Link to="/donation-events" className="hover:text-amber-800">Our Works</Link>
+              <Link to="/our-works" className="hover:text-amber-800">Our Works</Link>
             </li>
             <li>
-              <Link to="/students-benefited" className="hover:text-amber-800">Blogs</Link>
+              <Link to="/blogs" className="hover:text-amber-800">Blogs</Link>
             </li>
           </ul>
         </div>
