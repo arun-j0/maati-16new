@@ -8,7 +8,7 @@ const CoreMembers = () => {
       initial={{ opacity: 0, x: 50 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 50 }}
-      transition={{ duration: 0.5 }} 
+      transition={{ duration: 0.5 }}
     >
       <motion.div
         className="relative w-full max-w-6xl p-8 overflow-auto bg-white rounded-md shadow-lg"
@@ -35,7 +35,7 @@ const CoreMembers = () => {
         >
           <li className="mb-8 flex flex-col items-center bg-gray-50 p-4 rounded-lg shadow-lg sm:flex-row sm:text-left sm:p-6">
             <img
-              src="path/to/shubham_image.jpg"
+              src="src/assets/Shubham_Kanhaiya.jpg"
               alt="Shubham Kanhaiya"
               className="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
@@ -81,7 +81,7 @@ const CoreMembers = () => {
 
           <li className="mb-8 flex flex-col items-center bg-gray-50 p-4 rounded-lg shadow-lg sm:flex-row sm:text-left sm:p-6">
             <img
-              src="path/to/muneer_image.jpg"
+              src="src/assets/Muneer_Ashraf.jpg"
               alt="Muneer Ashraf"
               className="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
@@ -104,7 +104,7 @@ const CoreMembers = () => {
 
           <li className="mb-8 flex flex-col items-center bg-gray-50 p-4 rounded-lg shadow-lg sm:flex-row sm:text-left sm:p-6">
             <img
-              src="path/to/hemant_image.jpg"
+              src="src/assets/Hemant_Dubey.jpg"
               alt="Hemant"
               className="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
@@ -127,7 +127,7 @@ const CoreMembers = () => {
 
           <li className="mb-8 flex flex-col items-center bg-gray-50 p-4 rounded-lg shadow-lg sm:flex-row sm:text-left sm:p-6">
             <img
-              src="path/to/rishav_image.jpg"
+              src="src/assets/Rishav_Pandey.jpg"
               alt="Rishav Pandey"
               className="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
@@ -154,4 +154,3 @@ const CoreMembers = () => {
 };
 
 export default CoreMembers;
-
