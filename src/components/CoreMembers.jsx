@@ -42,10 +42,10 @@ const CoreMembers = () => {
             <img
               src={ShubhamKanhaiyaImage}
               alt="Shubham Kanhaiya"
-              className="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
+              className="w-32 h-32 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
             <div>
-              <strong className="text-lg font-semibold">
+              <strong className="text-xl font-semibold">
                 Shubham Kanhaiya (Co-Founder)
               </strong>
               <br />
@@ -65,10 +65,10 @@ const CoreMembers = () => {
             <img
               src={ArunavPrakharImage}
               alt="Arunav Prakhar"
-              className="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
+              className="w-32 h-32 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
             <div>
-              <strong className="text-lg font-semibold">
+              <strong className="text-xl font-semibold">
                 Arunav Prakhar (Co-Founder)
               </strong>
               <br />
@@ -88,10 +88,10 @@ const CoreMembers = () => {
             <img
               src={MuneerAshrafImage}
               alt="Muneer Ashraf"
-              className="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
+              className="w-32 h-32 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
             <div>
-              <strong className="text-lg font-semibold">
+              <strong className="text-xl font-semibold">
                 Muneer Ashraf (Secretary)
               </strong>
               <br />
@@ -111,10 +111,10 @@ const CoreMembers = () => {
             <img
               src={HemantDubeyImage}
               alt="Hemant"
-              className="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
+              className="w-32 h-32 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
             <div>
-              <strong className="text-lg font-semibold">
+              <strong className="text-xl font-semibold">
                 Hemant (Assistant Secretary)
               </strong>
               <br />
@@ -134,10 +134,10 @@ const CoreMembers = () => {
             <img
               src={RishavPandeyImage}
               alt="Rishav Pandey"
-              className="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
+              className="w-32 h-32 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
             <div>
-              <strong className="text-lg font-semibold">
+              <strong className="text-xl font-semibold">
                 Rishav Pandey (Treasurer)
               </strong>
               <br />
