@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import ShubhamKanhaiyaImage from '../assets/Shubham_Kanhaiya.jpg';
 import ArunavPrakharImage from '../assets/Arunav_Prakhar.jpg';
@@ -7,6 +8,12 @@ import HemantDubeyImage from '../assets/Hemant_Dubey.jpg';
 import RishavPandeyImage from '../assets/Rishav_Pandey.jpg';
 
 const CoreMembers = () => {
+  const navigate = useNavigate();
+
+  const handleBackToHome = () => {
+    navigate('/');
+  };
+
   return (
     <motion.div
       className="flex flex-col items-center justify-center min-h-screen p-4 text-black border-[#fee57e] border-8 bg-gray-100"
@@ -42,7 +49,7 @@ const CoreMembers = () => {
             <img
               src={ShubhamKanhaiyaImage}
               alt="Shubham Kanhaiya"
-              className="w-48 h-48 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
+              className="w-56 h-56 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
             <div>
               <strong className="text-xl font-semibold">
@@ -65,7 +72,7 @@ const CoreMembers = () => {
             <img
               src={ArunavPrakharImage}
               alt="Arunav Prakhar"
-              className="w-48 h-48 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
+              className="w-56 h-56 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
             <div>
               <strong className="text-xl font-semibold">
@@ -88,7 +95,7 @@ const CoreMembers = () => {
             <img
               src={MuneerAshrafImage}
               alt="Muneer Ashraf"
-              className="w-48 h-48 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
+              className="w-56 h-56 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
             <div>
               <strong className="text-xl font-semibold">
@@ -111,7 +118,7 @@ const CoreMembers = () => {
             <img
               src={HemantDubeyImage}
               alt="Hemant"
-              className="w-48 h-48 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
+              className="w-56 h-56 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
             <div>
               <strong className="text-xl font-semibold">
@@ -134,7 +141,7 @@ const CoreMembers = () => {
             <img
               src={RishavPandeyImage}
               alt="Rishav Pandey"
-              className="w-48 h-48 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
+              className="w-56 h-56 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
             <div>
               <strong className="text-xl font-semibold">
@@ -153,6 +160,13 @@ const CoreMembers = () => {
             </div>
           </li>
         </motion.ul>
+
+        <button
+          onClick={handleBackToHome}
+          className="px-4 py-2 mt-4 text-white bg-blue-600 rounded hover:bg-blue-700"
+        >
+          Back to Home
+        </button>
       </motion.div>
     </motion.div>
   );
