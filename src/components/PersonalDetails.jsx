@@ -1,7 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion'; 
 import { FaPhone, FaMapMarkerAlt, FaInstagram, FaLinkedin, FaUser } from 'react-icons/fa';
-import HemantDubeyImage from '../assets/Hemant_Dubey.jpg'; // Import the image
+import HemanshuDubeyImage from '../assets/Hemanshu_Dubey.jpg'; // Corrected the image path
 
 const PersonalDetails = () => {
   return (
@@ -58,7 +58,7 @@ const PersonalDetails = () => {
 
         <div className="relative order-1 mb-4 md:mb-0 md:ml-8 md:order-2">
           <img
-            src={HemantDubeyImage}
+            src={HemanshuDubeyImage}
             alt="Hemanshu Dubey"
             className="object-cover w-64 h-64 rounded-full md:w-96 md:h-96" // Adjusted image size for better display
           />
