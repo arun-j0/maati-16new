@@ -1,5 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import ShubhamImage from 'src/assets/Shubham_Kanhaiya.jpg';
+import ArunavImage from 'src/assets/Arunav_Prakhar.jpg';
+import MuneerImage from 'src/assets/Muneer_Ashraf.jpg';
+import HemantImage from 'src/assets/Hemant_Dubey.jpg';
+import RishavImage from 'src/assets/Rishav_Pandey.jpg';
 
 const CoreMembers = () => {
   return (
@@ -35,7 +40,7 @@ const CoreMembers = () => {
         >
           <li className="mb-8 flex flex-col items-center bg-gray-50 p-4 rounded-lg shadow-lg sm:flex-row sm:text-left sm:p-6">
             <img
-              src="src/assets/Shubham_Kanhaiya.jpg"
+              src={ShubhamImage}
               alt="Shubham Kanhaiya"
               className="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
@@ -58,7 +63,7 @@ const CoreMembers = () => {
 
           <li className="mb-8 flex flex-col items-center bg-gray-50 p-4 rounded-lg shadow-lg sm:flex-row sm:text-left sm:p-6">
             <img
-              src="src/assets/Arunav_Prakhar.jpg"
+              src={ArunavImage}
               alt="Arunav Prakhar"
               className="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
@@ -81,7 +86,7 @@ const CoreMembers = () => {
 
           <li className="mb-8 flex flex-col items-center bg-gray-50 p-4 rounded-lg shadow-lg sm:flex-row sm:text-left sm:p-6">
             <img
-              src="src/assets/Muneer_Ashraf.jpg"
+              src={MuneerImage}
               alt="Muneer Ashraf"
               className="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
@@ -104,7 +109,7 @@ const CoreMembers = () => {
 
           <li className="mb-8 flex flex-col items-center bg-gray-50 p-4 rounded-lg shadow-lg sm:flex-row sm:text-left sm:p-6">
             <img
-              src="src/assets/Hemant_Dubey.jpg"
+              src={HemantImage}
               alt="Hemant"
               className="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
@@ -127,7 +132,7 @@ const CoreMembers = () => {
 
           <li className="mb-8 flex flex-col items-center bg-gray-50 p-4 rounded-lg shadow-lg sm:flex-row sm:text-left sm:p-6">
             <img
-              src="src/assets/Rishav_Pandey.jpg"
+              src={RishavImage}
               alt="Rishav Pandey"
               className="w-24 h-24 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
