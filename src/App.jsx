@@ -18,22 +18,24 @@ import Footer from './components/Footer';
 function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/gallery" element={<GalleryPage />} />
-        <Route path="/blogs" element={<BlogPage />} />
-        <Route path="/our-works" element={<WorkPage />} />
-        <Route path="/personaldetails" element={<PersonalDetailsPage />} />
-        <Route path="/faqs" element={<FaqsPage />} />
-        <Route path="/motto-objective" element={<MottoPage />} />
-        <Route path="/objectives" element={<ObjectivesPage />} />
-        <Route path="/membership-volunteership" element={<MembershipPage />} />
-        <Route path="/donate-us" element={<DonationPage />} />
-        <Route path="/privacy-policies" element={<PrivacyPolicyPage />} />
-        <Route path="/blogs/:id" element={<BlogDetailPage />} />
-        <Route path="/core-members" element={<CoreMembers />} />
-      </Routes>
-      <Footer />
+      <div>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/gallery" element={<GalleryPage />} />
+          <Route path="/blogs" element={<BlogPage />} />
+          <Route path="/our-works" element={<WorkPage />} />
+          <Route path="/personaldetails" element={<PersonalDetailsPage />} />
+          <Route path="/faqs" element={<FaqsPage />} />
+          <Route path="/motto-objective" element={<MottoPage />} />
+          <Route path="/objectives" element={<ObjectivesPage />} />
+          <Route path="/membership-volunteership" element={<MembershipPage />} />
+          <Route path="/donate-us" element={<DonationPage />} />
+          <Route path="/privacy-policies" element={<PrivacyPolicyPage />} />
+          <Route path="/blogs/:id" element={<BlogDetailPage />} />
+          <Route path="/core-members" element={<CoreMembers />} />
+        </Routes>
+        <Footer />
+      </div>
     </Router>
   );
 }
