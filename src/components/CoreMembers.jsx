@@ -42,7 +42,7 @@ const CoreMembers = () => {
             <img
               src={ShubhamKanhaiyaImage}
               alt="Shubham Kanhaiya"
-              className="w-32 h-32 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
+              className="w-48 h-48 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
             <div>
               <strong className="text-xl font-semibold">
@@ -65,7 +65,7 @@ const CoreMembers = () => {
             <img
               src={ArunavPrakharImage}
               alt="Arunav Prakhar"
-              className="w-32 h-32 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
+              className="w-48 h-48 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
             <div>
               <strong className="text-xl font-semibold">
@@ -88,7 +88,7 @@ const CoreMembers = () => {
             <img
               src={MuneerAshrafImage}
               alt="Muneer Ashraf"
-              className="w-32 h-32 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
+              className="w-48 h-48 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
             <div>
               <strong className="text-xl font-semibold">
@@ -111,7 +111,7 @@ const CoreMembers = () => {
             <img
               src={HemantDubeyImage}
               alt="Hemant"
-              className="w-32 h-32 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
+              className="w-48 h-48 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
             <div>
               <strong className="text-xl font-semibold">
@@ -134,7 +134,7 @@ const CoreMembers = () => {
             <img
               src={RishavPandeyImage}
               alt="Rishav Pandey"
-              className="w-32 h-32 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
+              className="w-48 h-48 rounded-full mb-4 sm:mb-0 sm:mr-4 border-4 border-[#fee57e]"
             />
             <div>
               <strong className="text-xl font-semibold">
