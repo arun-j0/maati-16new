@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+
 import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -88,7 +90,7 @@ const BlogDetailPage = () => {
                     <div key={index} className="flex justify-center">
                       <motion.img
                         src={image}
-                        alt={`Image ${index + 1}`}
+                        alt={Image ${index + 1}}
                         className="object-cover w-full h-auto rounded-lg"
                         initial={{ scale: 0.8 }}
                         animate={{ scale: 1 }}
@@ -144,6 +146,7 @@ const BlogDetailPage = () => {
           </motion.div>
         </div>
       </section>
+      <Footer />
     </>
   );
 };
