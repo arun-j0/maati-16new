@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import { FiSearch } from 'react-icons/fi';
 import { IoMdClose } from 'react-icons/io';
 
@@ -130,7 +129,6 @@ const WorkPage = () => {
           )}
         </div>
       </section>
-      <Footer />
     </>
   );
 };
