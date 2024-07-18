@@ -1,9 +1,7 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-
 import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -146,7 +144,7 @@ const BlogDetailPage = () => {
           </motion.div>
         </div>
       </section>
-      <Footer />
+      {/* Footer removed */}
     </>
   );
 };
