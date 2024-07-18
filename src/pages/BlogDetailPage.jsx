@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Navbar from '../components/Navbar';
@@ -6,36 +6,34 @@ import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 
-const placeholderImage = "https://designshack.net/wp-content/uploads/placeholder-image.png";
-
-const blogs = [
-  {
-    title: "Our Recent Donation Event",
-    content: "We recently organized a donation event to support underprivileged children in our community. The event was a great success, with many participants contributing generously.",
-    detailedDescription: "On July 5, 2024, our NGO hosted a donation event aimed at supporting underprivileged children in our local community. The event took place at the community center and brought together over 150 attendees, including local families, volunteers, and business partners. We collected funds and essential supplies, including clothing, school supplies, and hygiene products. Local businesses donated generously, providing both goods and sponsorships to ensure the event's success. Thanks to the collective effort of volunteers, we managed to raise over $5,000, which will directly benefit our education and health initiatives for these children. We are immensely grateful for the outpouring of support and look forward to organizing more events like this in the future to continue making a positive impact.",
-    author: "Arun",
-    date: "2024-07-10",
-    id: 1,
-    images: [placeholderImage, placeholderImage, placeholderImage]
-  },
-  {
-    title: "Another Donation Event",
-    content: "Another donation event was held to support education for children.",
-    detailedDescription: "This event took place on June 15, 2024, focusing on gathering funds for educational materials. It successfully engaged the community.",
-    author: "Arun",
-    date: "2024-06-20",
-    id: 2,
-    images: [placeholderImage]
-  },
-];
-
 const BlogDetailPage = () => {
   const { id } = useParams();
-  const blog = blogs.find(blog => blog.id === parseInt(id));
+  const [blog, setBlog] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-  if (!blog) {
-    return <div>Blog not found</div>;
-  }
+  useEffect(() => {
+    const fetchBlog = async () => {
+      try {
+        const response = await fetch(`https://api.example.com/blogs/${id}`);
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        const data = await response.json();
+        setBlog(data);
+      } catch (error) {
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchBlog();
+  }, [id]);
+
+  if (loading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+  if (!blog) return <div>Blog not found</div>;
 
   const settings = {
     dots: true,
@@ -46,10 +44,6 @@ const BlogDetailPage = () => {
     autoplay: true,
     autoplaySpeed: 2000
   };
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   return (
     <>
