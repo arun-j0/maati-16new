@@ -1,3 +1,4 @@
+// components/Footer.jsx
 import React from 'react';
 import { FaInstagram, FaLinkedin, FaFacebook, FaPhone, FaEnvelope } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
@@ -67,10 +68,10 @@ const Footer = () => {
               <Link to="/core-members" className="hover:text-amber-800">Core Members</Link>
             </li>
             <li>
-              <Link to="/motto-and-objective" className="hover:text-amber-800">Our Motto and Objective</Link>
+              <Link to="/motto-objective" className="hover:text-amber-800">Our Motto and Objective</Link>
             </li>
             <li>
-              <Link to="/faqs-and-policies" className="hover:text-amber-800">FAQs and Policies</Link>
+              <Link to="/faqs" className="hover:text-amber-800">FAQs and Policies</Link>
             </li>
             <li>
               <Link to="/our-works" className="hover:text-amber-800">Our Works</Link>
