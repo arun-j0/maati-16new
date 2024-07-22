@@ -4,6 +4,7 @@ import Objectives from '../components/Objectives'
 import Footer from '../components/Footer'
 
 function ObjectivesPage() {
+  
   return (
     <>
         <Navbar/>

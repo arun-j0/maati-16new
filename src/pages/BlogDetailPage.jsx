@@ -6,7 +6,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css'; 
+import 'slick-carousel/slick/slick-theme.css';
 
 const placeholderImage = "https://designshack.net/wp-content/uploads/placeholder-image.png";
 
@@ -50,9 +50,8 @@ const BlogDetailPage = () => {
   };
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top when component mounts
   }, []);
-
   return (
     <>
       <Navbar />
@@ -90,7 +89,7 @@ const BlogDetailPage = () => {
                     <div key={index} className="flex justify-center">
                       <motion.img
                         src={image}
-                        alt={Image ${index + 1}}
+                        alt={`Image ${index + 1}`}
                         className="object-cover w-full h-auto rounded-lg"
                         initial={{ scale: 0.8 }}
                         animate={{ scale: 1 }}

@@ -12,8 +12,7 @@ import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import MottoPage from './pages/MottoPage';
 import ObjectivesPage from './pages/ObjectivesPage';
 import BlogDetailPage from './pages/BlogDetailPage';
-import CoreMembers from './components/CoreMembers';
-import Footer from './components/Footer'; // Import Footer component
+import CoreMembersPage from './pages/CoreMembersPage';
 
 function App() {
     return (
@@ -32,9 +31,9 @@ function App() {
                     <Route path="/donate-us" element={<DonationPage />} />
                     <Route path="/privacy-policies" element={<PrivacyPolicyPage />} />
                     <Route path="/blogs/:id" element={<BlogDetailPage />} />
-                    <Route path="/core-members" element={<CoreMembers />} />
+                    <Route path="/core-members" element={<CoreMembersPage />} />
                 </Routes>
-                <Footer />
+                
             </div>
         </Router>
     );

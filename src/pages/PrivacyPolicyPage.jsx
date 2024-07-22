@@ -7,7 +7,7 @@ import Footer from '../components/Footer'
 function PrivacyPolicyPage() {
    
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top when component mounts
   }, []);
   return (
     <>
