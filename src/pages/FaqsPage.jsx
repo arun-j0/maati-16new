@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Faqs from '../components/Faqs';
+import Footer from '../components/Footer';
 
 function FaqsPage() {
   useEffect(() => {
@@ -11,6 +12,7 @@ function FaqsPage() {
     <>
       <Navbar />
       <Faqs />
+      <Footer/>
     </>
   );
 }

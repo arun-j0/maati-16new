@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../components/Navbar';
 import Motto from '../components/Motto';
+import Footer from '../components/Footer';
 
 function MottoPage() {
     
@@ -8,6 +9,7 @@ function MottoPage() {
         <>
             <Navbar />
             <Motto />
+            <Footer/>
         </>
     );
 }

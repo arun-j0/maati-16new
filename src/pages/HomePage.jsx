@@ -6,6 +6,7 @@ import IntroSection from '../components/Intro';
 import SponsorSection from '../components/Sponsor';
 import ConnectWithUs from '../components/Connect';
 import { useEffect } from 'react';
+import Footer from '../components/Footer';
 
 function HomePage() {
     useEffect(() => {
@@ -18,6 +19,7 @@ function HomePage() {
             <IntroSection />
             <SponsorSection />
             <ConnectWithUs />
+            <Footer/>
         </>
     );
 }
