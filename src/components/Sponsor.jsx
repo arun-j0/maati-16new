@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Tilt } from 'react-tilt';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'; // Updated to use useNavigate
 
 const Sponsor = () => {
   const controls = useAnimation();
@@ -11,7 +11,7 @@ const Sponsor = () => {
     threshold: 0.1,
   });
 
-  const history = useHistory();
+  const navigate = useNavigate(); // Updated to use useNavigate
 
   React.useEffect(() => {
     if (inView) {
@@ -76,10 +76,7 @@ Cost per child: ~INR 12000/year`,
   ];
 
   const handleDonateClick = (title) => {
-    history.push({
-      pathname: '/donation',
-      state: { sponsorTitle: title },
-    });
+    navigate('/donate-us', { state: { sponsorTitle: title } }); // Updated to use navigate
   };
 
   return (
