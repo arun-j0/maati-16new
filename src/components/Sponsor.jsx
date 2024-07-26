@@ -61,7 +61,8 @@ Stationery items: ~INR 5000
     },
     {
       title: "Support After-School Programs",
-      description: "Your donation can fund after-school programs that offer tutoring and extracurricular activities.",
+      description: `Support after-school programs for activities such as drawing, computer classes, dancing, and singing.
+Cost per child: ~INR 12000/year`,
       button: "Support Programs",
     },
     {
