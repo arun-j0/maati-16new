@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 
-const DonationForm = ({ sponsorTitle }) => {
+const Donation = () => {
+  const location = useLocation();
+  const { sponsorTitle } = location.state || { sponsorTitle: 'General Donation' };
+
   const [formData, setFormData] = useState({
     name: '',
     address: '',
@@ -141,4 +145,4 @@ const DonationForm = ({ sponsorTitle }) => {
   );
 };
 
-export default DonationForm;
+export default Donation;
