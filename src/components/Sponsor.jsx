@@ -37,10 +37,9 @@ const SponsorSection = () => {
     {
       title: "Provide Meals for a Week",
       description: `Sponsor a snack for 100 children:
-Fruit: ~INR 1000 
-Samosa: ~INR 1000 
-Juice/Flavored Milk: ~INR 1000 ,
-
+Fruit: ~INR 600
+Samosa: ~INR 1500
+Juice/Flavored Milk: ~INR 1900`,
       button: "Donate for Meals",
     },
     {
