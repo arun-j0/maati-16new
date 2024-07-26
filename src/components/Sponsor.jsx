@@ -49,7 +49,14 @@ Juice/Flavored Milk: ~INR 1900`,
     },
     {
       title: "Supply School Supplies",
-      description: "Help us supply essential school supplies like books, notebooks, and stationery to children.",
+      description: `Supply school supplies for 10 children:
+Stationery items: ~INR 5000
+- Pencil
+- Pen
+- Eraser
+- Sharpener
+- Scale
+- Notebook`,
       button: "Donate Supplies",
     },
     {
