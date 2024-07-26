@@ -1,5 +1,5 @@
 import React from 'react';
-import {Tilt} from 'react-tilt';
+import { Tilt } from 'react-tilt';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
@@ -30,13 +30,19 @@ const SponsorSection = () => {
 
   const sponsors = [
     {
-      title: "Sponsor a child's education,
+      title: "Sponsor a child's education",
       description: "You can donate according to your pocket.",
       button: "Donate Now",
     },
     {
       title: "Provide Meals for a Week",
-      description: "Your contribution can provide meals for a week for a group of underprivileged children.",
+      description: `Sponsor a snack for 100 children:
+Fruit: ~INR 600
+Samosa: ~INR 1500
+Juice/Flavored Milk: ~INR 1900
+Puri-Bhaji: ~INR 2000
+
+You can even visit the park & arrange for something more lavish on a happy occasion.`,
       button: "Donate for Meals",
     },
     {
