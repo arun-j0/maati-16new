@@ -66,9 +66,9 @@ Cost per child: ~INR 12000/year`,
       button: "Support Programs",
     },
     {
-      title: "Organize a Field Trip",
-      description: "Sponsor a field trip for children to give them educational and recreational experiences.",
-      button: "Organize Trip",
+      title: "Sponsor Activities",
+      description: `We would love to expose the children to activities that’ll help them grow holistically, that they might otherwise not get a chance to experience. Eg: Educational excursion to a factory, movies, picnics, camps, etc.`,
+      button: "Click to Donate",
     },
   ];
 
