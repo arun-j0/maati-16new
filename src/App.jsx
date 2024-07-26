@@ -7,7 +7,7 @@ import WorkPage from './pages/WorkPage';
 import PersonalDetailsPage from './pages/PersonalDetailsPage';
 import FaqsPage from './pages/FaqsPage';
 import MembershipPage from './pages/MembershipPage';
-import DonationPage from './pages/DonationPage';
+import DonationPage from './pages/DonationPage'; // Ensure this matches the path
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import MottoPage from './pages/MottoPage';
 import ObjectivesPage from './pages/ObjectivesPage';
@@ -28,12 +28,11 @@ function App() {
                     <Route path="/motto-objective" element={<MottoPage />} />
                     <Route path="/objectives" element={<ObjectivesPage />} />
                     <Route path="/membership-volunteership" element={<MembershipPage />} />
-                    <Route path="/donate-us" element={<DonationPage />} />
+                    <Route path="/donate-us" element={<DonationPage />} /> {/* This should match */}
                     <Route path="/privacy-policies" element={<PrivacyPolicyPage />} />
                     <Route path="/blogs/:id" element={<BlogDetailPage />} />
                     <Route path="/core-members" element={<CoreMembersPage />} />
                 </Routes>
-                
             </div>
         </Router>
     );
