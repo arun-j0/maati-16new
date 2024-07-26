@@ -2,7 +2,7 @@ import React from 'react';
 import { Tilt } from 'react-tilt';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { useNavigate } from 'react-router-dom'; // Updated to use useNavigate
+import { useNavigate } from 'react-router-dom';
 
 const Sponsor = () => {
   const controls = useAnimation();
@@ -11,7 +11,7 @@ const Sponsor = () => {
     threshold: 0.1,
   });
 
-  const navigate = useNavigate(); // Updated to use useNavigate
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     if (inView) {
@@ -34,7 +34,8 @@ const Sponsor = () => {
   const sponsors = [
     {
       title: "Sponsor a child's education",
-      description: "You can donate according to your pocket.",
+      description: `You can donate according to your pocket. 
+      The cost to sponsor a child's education is approximately INR 15,000 per year.`,
       button: "Donate Now",
     },
     {
@@ -76,7 +77,7 @@ Cost per child: ~INR 12000/year`,
   ];
 
   const handleDonateClick = (title) => {
-    navigate('/donate-us', { state: { sponsorTitle: title } }); // Updated to use navigate
+    navigate('/donate-us', { state: { sponsorTitle: title } });
   };
 
   return (
