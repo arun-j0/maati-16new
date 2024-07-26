@@ -30,8 +30,8 @@ const SponsorSection = () => {
 
   const sponsors = [
     {
-      title: "Sponsor a Classroom",
-      description: "Help us build and maintain classrooms to provide better educational facilities for children.",
+      title: "Sponsor a child's education,
+      description: "You can donate according to your pocket.",
       button: "Donate Now",
     },
     {
