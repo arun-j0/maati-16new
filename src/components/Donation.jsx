@@ -16,16 +16,13 @@ const Donation = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
+    setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
-    // You can add your form submission logic here
+    // Add form submission logic here
   };
 
   return (
@@ -67,7 +64,7 @@ const Donation = () => {
               name="sponsorTitle"
               value={sponsorTitle}
               readOnly
-              className="w-full p-2 border border-gray-300 rounded bg-gray-100"
+              className="w-full p-2 bg-gray-100 border border-gray-300 rounded"
             />
           </div>
           <div className="mb-4">

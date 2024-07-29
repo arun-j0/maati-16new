@@ -3,15 +3,10 @@ import { Tilt } from 'react-tilt';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react'
 
 const Sponsor = () => {
   const controls = useAnimation();
-  const [ref, inView] = useInView({
-    triggerOnce: false,
-    threshold: 0.1,
-  });
-
+  const [ref, inView] = useInView({ triggerOnce: false, threshold: 0.1 });
   const navigate = useNavigate();
 
   React.useEffect(() => {
@@ -99,12 +94,11 @@ Cost per child: ~INR 12000/year`,
         animate={controls}
         variants={titleVariants}
       >
-        We do not have a revenue-based model. So we need consistent donations to
-        increase our reach & grow our work.
+        We do not have a specific amount that you need to donate. The details for sponsorship are below:
       </motion.p>
-      <div className="grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-3">
+      <div className="grid w-full max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
         {sponsors.map((sponsor, index) => (
-          <Tilt key={index} className="Tilt" options={{ max: 25, scale: 1.05 }}>
+          <Tilt key={index} className="Tilt" options={{ max: 25, scale: 1.05, speed: 400 }}>
             <motion.div
               className="flex flex-col justify-between h-full p-6 bg-white rounded-lg shadow-lg Tilt-inner"
               initial="hidden"
@@ -116,7 +110,7 @@ Cost per child: ~INR 12000/year`,
                 <p className="mb-4 whitespace-pre-wrap">{sponsor.description}</p>
               </div>
               <button
-                className="px-4 py-2 mt-4 font-bold text-white transition-colors rounded-lg duration:300 bg-amber-500 hover:bg-amber-600"
+                className="px-4 py-2 mt-4 font-bold text-white transition-colors duration-300 rounded-lg bg-amber-500 hover:bg-amber-600"
                 onClick={() => handleDonateClick(sponsor.title)}
               >
                 {sponsor.button}
