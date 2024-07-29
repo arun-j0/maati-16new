@@ -13,6 +13,7 @@ import MottoPage from './pages/MottoPage';
 import ObjectivesPage from './pages/ObjectivesPage';
 import BlogDetailPage from './pages/BlogDetailPage';
 import CoreMembersPage from './pages/CoreMembersPage';
+import DetailedProjectPage from './pages/DetaiedWorkPage';
 
 function App() {
     return (
@@ -31,6 +32,7 @@ function App() {
                     <Route path="/donate-us" element={<DonationPage />} />
                     <Route path="/privacy-policies" element={<PrivacyPolicyPage />} />
                     <Route path="/blogs/:id" element={<BlogDetailPage />} />
+                    <Route path="/our-works/:id" element={<DetailedProjectPage/>}/>
                     <Route path="/core-members" element={<CoreMembersPage />} />
                 </Routes>
                 

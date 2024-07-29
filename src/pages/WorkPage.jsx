@@ -92,7 +92,7 @@ const WorkPage = () => {
                 className="relative overflow-hidden w-[90%] mx-auto"
                 whileHover={{ scale: 1.05 }}
               >
-               <Link to={`/works/${project.id}`}>
+               <Link to={`/our-works/${project.id}`}>
                   <img
                     src={project.image}
                     alt={project.title}
