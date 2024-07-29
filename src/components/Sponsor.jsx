@@ -3,6 +3,7 @@ import { Tilt } from 'react-tilt';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react'
 
 const Sponsor = () => {
   const controls = useAnimation();

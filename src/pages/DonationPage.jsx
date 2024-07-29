@@ -8,6 +8,7 @@ function DonationPage() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' }); // Scroll to top when component mounts
   }, []);
+  
   return (
     <>
     <Navbar/>
