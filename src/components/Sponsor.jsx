@@ -35,7 +35,7 @@ const Sponsor = () => {
     {
       title: "Sponsor a child's education",
       description: `You can donate according to your pocket. 
-      The cost to sponsor a child's education is approximately INR 15,000 per year.`,
+The cost to sponsor a child's education is approximately INR 15,000 per year.`,
       button: "Donate Now",
     },
     {
@@ -115,7 +115,7 @@ Cost per child: ~INR 12000/year`,
                 <p className="mb-4 whitespace-pre-wrap">{sponsor.description}</p>
               </div>
               <button
-                className="px-4 py-2 mt-4 font-bold text-white transition-colors duration:300 rounded-lg bg-amber-500 hover:bg-amber-600"
+                className="px-4 py-2 mt-4 font-bold text-white transition-colors rounded-lg duration:300 bg-amber-500 hover:bg-amber-600"
                 onClick={() => handleDonateClick(sponsor.title)}
               >
                 {sponsor.button}

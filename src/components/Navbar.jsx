@@ -1,15 +1,15 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { FaHome, FaInfoCircle, FaBriefcase, FaImages, FaProjectDiagram, FaBlog, FaPhone, FaDonate, FaBars, FaTimes } from 'react-icons/fa';
+import { FaHome, FaInfoCircle, FaBriefcase, FaImages, FaProjectDiagram, FaBlog, FaDonate, FaBars, FaTimes } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import logo from '../assets/logo.png';
-import PersonalDetails from './PersonalDetails';
+
 
 const Navbar = () => {
   const location = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
-  const [showPersonalDetails, setShowPersonalDetails] = useState(false);
+
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -266,7 +266,7 @@ const Navbar = () => {
             >
               <li>
                 <Link
-                  to="/personal-details"
+                  to="/personaldetails"
                   className="block px-4 py-2 text-gray-800 transition-colors duration-300 rounded-lg hover:text-white hover:bg-amber-800"
                   onClick={closeMenu}
                 >
@@ -293,7 +293,7 @@ const Navbar = () => {
               </li>
               <li>
                 <Link
-                  to="/faqs-policies"
+                  to="/faqs"
                   className="block px-4 py-2 text-gray-800 transition-colors duration-300 rounded-lg hover:text-white hover:bg-amber-800"
                   onClick={closeMenu}
                 >
