@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { useLocation } from 'react-router-dom';
 
-const DonationForm = () => {
+const Donation = () => {
+  const location = useLocation();
+  const { sponsorTitle } = location.state || { sponsorTitle: 'General Donation' };
+
   const [formData, setFormData] = useState({
     name: '',
     address: '',
@@ -47,7 +51,7 @@ const DonationForm = () => {
           <motion.p className="font-bold"><strong>Account Holder Name:</strong> Hemanshu</motion.p>
           <motion.p className="font-bold"><strong>IFSC:</strong> BARB0BUDDHA (5th Character is ZERO)</motion.p>
           <motion.p className="font-bold"><strong>Branch:</strong> Buddha Colony</motion.p>
-          <motionp className="font-bold"><strong>Pay Online:</strong> 6205415221@ybl</motionp>
+          <motion.p className="font-bold"><strong>Pay Online:</strong> 6205415221@ybl</motion.p>
         </motion.div>
         <motion.form
           onSubmit={handleSubmit}
@@ -55,6 +59,17 @@ const DonationForm = () => {
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 0.5 }}
         >
+          <div className="mb-4">
+            <label htmlFor="sponsorTitle" className="block mb-2">Sponsorship Option</label>
+            <input
+              type="text"
+              id="sponsorTitle"
+              name="sponsorTitle"
+              value={sponsorTitle}
+              readOnly
+              className="w-full p-2 border border-gray-300 rounded bg-gray-100"
+            />
+          </div>
           <div className="mb-4">
             <label htmlFor="name" className="block mb-2">Name</label>
             <input
@@ -130,4 +145,4 @@ const DonationForm = () => {
   );
 };
 
-export default DonationForm;
+export default Donation;

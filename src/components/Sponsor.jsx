@@ -1,14 +1,17 @@
 import React from 'react';
-import {Tilt} from 'react-tilt';
+import { Tilt } from 'react-tilt';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { useNavigate } from 'react-router-dom';
 
-const SponsorSection = () => {
+const Sponsor = () => {
   const controls = useAnimation();
   const [ref, inView] = useInView({
     triggerOnce: false,
     threshold: 0.1,
   });
+
+  const navigate = useNavigate();
 
   React.useEffect(() => {
     if (inView) {
@@ -30,13 +33,17 @@ const SponsorSection = () => {
 
   const sponsors = [
     {
-      title: "Sponsor a Classroom",
-      description: "Help us build and maintain classrooms to provide better educational facilities for children.",
+      title: "Sponsor a child's education",
+      description: `You can donate according to your pocket. 
+      The cost to sponsor a child's education is approximately INR 15,000 per year.`,
       button: "Donate Now",
     },
     {
       title: "Provide Meals for a Week",
-      description: "Your contribution can provide meals for a week for a group of underprivileged children.",
+      description: `Sponsor a snack for 100 children:
+Fruit: ~INR 1000
+Samosa: ~INR 1000
+Juice/Flavored Milk: ~INR 1000`,
       button: "Donate for Meals",
     },
     {
@@ -46,20 +53,32 @@ const SponsorSection = () => {
     },
     {
       title: "Supply School Supplies",
-      description: "Help us supply essential school supplies like books, notebooks, and stationery to children.",
+      description: `Supply school supplies for 10 children:
+Stationery items: ~INR 5000
+- Pencil
+- Pen
+- Eraser
+- Sharpener
+- Scale
+- Notebook`,
       button: "Donate Supplies",
     },
     {
       title: "Support After-School Programs",
-      description: "Your donation can fund after-school programs that offer tutoring and extracurricular activities.",
+      description: `Support after-school programs for activities such as drawing, computer classes, dancing, and singing.
+Cost per child: ~INR 12000/year`,
       button: "Support Programs",
     },
     {
-      title: "Organize a Field Trip",
-      description: "Sponsor a field trip for children to give them educational and recreational experiences.",
-      button: "Organize Trip",
+      title: "Sponsor Activities",
+      description: `We would love to expose the children to activities that’ll help them grow holistically, that they might otherwise not get a chance to experience. Eg: Educational excursion to a factory, movies, picnics, camps, etc.`,
+      button: "Click to Donate",
     },
   ];
+
+  const handleDonateClick = (title) => {
+    navigate('/donate-us', { state: { sponsorTitle: title } });
+  };
 
   return (
     <section ref={ref} className="flex flex-col items-center justify-center min-h-[70vh] p-8 bg-gray-100 border-[#fee57e] border-t-0 border-8">
@@ -95,7 +114,10 @@ const SponsorSection = () => {
                 <h3 className="mb-4 text-2xl font-bold">{sponsor.title}</h3>
                 <p className="mb-4 whitespace-pre-wrap">{sponsor.description}</p>
               </div>
-              <button className="px-4 py-2 mt-4 font-bold text-white transition-colors duration-300 rounded-lg bg-amber-500 hover:bg-amber-600">
+              <button
+                className="px-4 py-2 mt-4 font-bold text-white transition-colors duration:300 rounded-lg bg-amber-500 hover:bg-amber-600"
+                onClick={() => handleDonateClick(sponsor.title)}
+              >
                 {sponsor.button}
               </button>
             </motion.div>
@@ -106,4 +128,4 @@ const SponsorSection = () => {
   );
 };
 
-export default SponsorSection;
+export default Sponsor;
