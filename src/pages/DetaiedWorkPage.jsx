@@ -122,7 +122,24 @@ const projects = [
     detailedDescription: "We provide food to orphan kids during special occasions, ensuring they receive nutritious meals and feel loved and cared for. This initiative helps in bringing smiles to their faces and making the occasions special for them.",
     date: "Ongoing",
     images: [id9_img1, id9_img2, id9_img3, id9_img4]
+  },
+  {
+    id: 10,
+    title: 'Fund Raising Webinar on: Depression Among Youngsters',
+    description: 'A webinar addressing depression among youngsters.',
+    detailedDescription: 'This webinar focuses on raising awareness about depression among young people. The Chief Guest is Ms. Srabani Chatterjee, a Clinical Psychologist, with Muneer Ashraf serving as the Event Head. The speakers include Devyani Sisodia from Greater Noida, Sakshi Giri from Ranchi, Nida Shams from Manipal, Fahad Gayas from Patna, Ujjwal Bharadwaj from Patna, Avisha Mishra from Kanpur, Fawaz Rahman from Patna, Umang from Lucknow, Animesh Kumar from Ranchi, Sanchita from Bengaluru, Shubham Dwivedi from Prayagraj, Rahul Chand from New Delhi, Garima Sahu from Prayagraj, Rahul Srivastava from New Delhi, Apoorva Raj from Jaipur, Abhishek Jha from New Delhi, and Ayush Harsh from Kolkata.',
+    date: '2024-11-14'
+
+  },
+  {
+    id: 11,
+    title: 'Open Mic Event – The Virtual Verse',
+    description: 'An open mic event showcasing poetic talents.',
+    detailedDescription: 'The Virtual Verse is an open mic event featuring Ms. Oshin, an Anchor at Doordarshan and Head of Poetic Atma, Bihar, Jharkhand, and Dr. Pallavi Mishra, an Associate Professor at Amity University, Jaipur, as the Chief Guests. The Event Heads are Muneer Ashraf, Samanta Sagar, Sania Mallick, and Sanskriti Singh. The speakers include Parth Singh, Juhi Tomar, Sonal Rasthod, Sansriti Pandey, Shashank Raj Kashyap, Anjali Tiwari, Lavyana Singh, Paramjeet, Kapil Mansi, Avisha Mishra, Nisha Kumari, Animesh, Garima Sahu, Shubham Dwivedi, Vikas Mauya, Alok Singh, Rahul Singh, Sashi Bharitya, Riya Sri, and Shivansh Shekhar.',
+    date: '2022-11-14',
+    
   }
+  
 ];
 
 const DetailedProjectPage = () => {
@@ -154,29 +171,33 @@ const DetailedProjectPage = () => {
         <div className="container mx-auto">
           <div className="p-6 mx-auto bg-white rounded-lg shadow-md w-[95%] lg:w-[80%]">
             <h1 className="text-3xl md:text-5xl font-bold text-[#280101] mb-8">{project.title}</h1>
-            {project.images.length === 1 ? (
-              <div className="flex justify-center mb-8">
-                <img
-                  src={project.images[0]}
-                  alt={project.title}
-                  className="object-cover w-full lg:w-[80%] h-auto rounded-lg"
-                />
-              </div>
+            {project.images && project.images.length > 0 ? (
+              project.images.length === 1 ? (
+                <div className="flex justify-center mb-8">
+                  <img
+                    src={project.images[0]}
+                    alt={project.title}
+                    className="object-cover w-full lg:w-[80%] h-auto rounded-lg"
+                  />
+                </div>
+              ) : (
+                <div className="flex justify-center mb-4">
+                  <Slider {...settings} className="w-full rounded-lg lg:w-3xl">
+                    {project.images.map((image, index) => (
+                      <div key={index} className="flex justify-center">
+                        <img
+                          src={image}
+                          alt={`Image ${index + 1}`}
+                          className="object-cover w-full h-[300px] md:h-[600px] rounded-lg"
+                          style={{ objectFit: 'cover' }}
+                        />
+                      </div>
+                    ))}
+                  </Slider>
+                </div>
+              )
             ) : (
-              <div className="flex justify-center mb-4">
-                <Slider {...settings} className="w-full rounded-lg lg:w-3xl">
-                  {project.images.map((image, index) => (
-                    <div key={index} className="flex justify-center">
-                      <img
-                        src={image}
-                        alt={`Image ${index + 1}`}
-                        className="object-cover w-full h-[300px] md:h-[600px] rounded-lg"
-                        style={{ objectFit: 'cover' }}
-                      />
-                    </div>
-                  ))}
-                </Slider>
-              </div>
+              <div>No images available</div>
             )}
             <p className="mb-4 text-xl font-bold text-gray-600">{project.description}</p>
             <p className="mb-4 text-lg text-gray-600">{project.detailedDescription}</p>
@@ -195,5 +216,6 @@ const DetailedProjectPage = () => {
     </>
   );
 };
+
 
 export default DetailedProjectPage;

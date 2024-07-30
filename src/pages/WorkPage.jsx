@@ -14,6 +14,7 @@ import id6 from "../assets/works/blanket-donation-drive2/image1.png";
 import id7 from "../assets/works/children's-day-celebration/image1.png";
 import id8 from "../assets/works/stray-dogs/image1.png";
 import id9 from "../assets/works/food-donation/image1.png";
+import noimg from "../assets/works/fund-img.png";
 
 const projects = [
   {
@@ -78,6 +79,20 @@ const projects = [
     description: "Feeding orphan kids on special occasions.",
     date: "Ongoing",
     image: id9
+  },
+  {
+    id: 10,
+    title: 'Fund Raising Webinar on: Depression Among Youngsters',
+    description: 'A webinar addressing depression among youngsters.',
+    date: '2024-11-14',
+    
+  },
+  {
+    id: 11,
+    title: 'Open Mic Event – The Virtual Verse',
+    description: 'An open mic event showcasing poetic talents.',
+    date: '2022-11-14',
+   
   }
 ];
 
@@ -151,7 +166,7 @@ const WorkPage = () => {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.3 }}
               >
-                <img src={project.image} alt={project.title} className="object-cover w-full h-48" />
+                <img src={project.image || noimg} alt={project.title} className="object-cover w-full h-48" />
                 <div className="flex flex-col flex-grow p-6">
                   <h3 className="text-xl font-bold text-[#280101] mb-4">{project.title}</h3>
                   <p className="flex-grow text-base text-gray-700">{project.description}</p>
